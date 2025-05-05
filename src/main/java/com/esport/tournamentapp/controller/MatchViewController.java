@@ -11,6 +11,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
+
 @Controller
 @RequestMapping("/admin/matches")
 public class MatchViewController {
@@ -48,7 +50,19 @@ public class MatchViewController {
     }
 
     @PostMapping("/save")
-    public String saveMatch(@ModelAttribute Match match) {
+    public String saveMatch(@ModelAttribute Match match,
+                            @RequestParam("teamA.id") Long teamAId,
+                            @RequestParam("teamB.id") Long teamBId,
+                            @RequestParam("tournament.id") Long tournamentId) {
+
+        Team teamA = teamRepository.findById(teamAId).orElse(null);
+        Team teamB = teamRepository.findById(teamBId).orElse(null);
+        Tournament tournament = tournamentRepository.findById(tournamentId).orElse(null);
+
+        match.setTeamA(teamA);
+        match.setTeamB(teamB);
+        match.setTournament(tournament);
+
         matchRepository.save(match);
         return "redirect:/admin/matches";
     }

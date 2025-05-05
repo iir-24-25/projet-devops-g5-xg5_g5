@@ -24,8 +24,8 @@
                     <tbody>
                     <tr th:each="match : ${matches}">
                         <td th:text="${match.id}"></td>
-                        <td th:text="${match.team1.name}"></td>
-                        <td th:text="${match.team2.name}"></td>
+                        <td th:text="${match.teamA.name}"></td>
+                        <td th:text="${match.teamB.name}"></td>
                         <td th:text="${match.tournament.name}"></td>
                         <td th:text="${#dates.format(match.matchDate, 'dd-MM-yyyy')}"></td>
                         <td>

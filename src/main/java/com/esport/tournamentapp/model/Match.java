@@ -1,6 +1,7 @@
 package com.esport.tournamentapp.model;
 
 import jakarta.persistence.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
@@ -21,8 +22,9 @@ public class Match {
     @ManyToOne
     private Team teamB;
 
-    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date matchDate;
+
 
     @OneToOne(cascade = CascadeType.ALL)
     private MatchResult result;
