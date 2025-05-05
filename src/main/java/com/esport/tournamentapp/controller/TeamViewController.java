@@ -1,6 +1,7 @@
 package com.esport.tournamentapp.controller;
 
 import com.esport.tournamentapp.model.Team;
+import com.esport.tournamentapp.repository.PlayerRepository;
 import com.esport.tournamentapp.repository.TeamRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,6 +11,8 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 @RequestMapping("/admin/teams")
 public class TeamViewController {
+    @Autowired
+    private PlayerRepository playerRepository;
 
     @Autowired
     private TeamRepository teamRepository;
@@ -23,6 +26,7 @@ public class TeamViewController {
     @GetMapping("/add")
     public String showAddForm(Model model) {
         model.addAttribute("team", new Team());
+        model.addAttribute("allPlayers", playerRepository.findAll());
         return "admin/team-form";
     }
 
@@ -30,6 +34,7 @@ public class TeamViewController {
     public String showEditForm(@PathVariable Long id, Model model) {
         Team team = teamRepository.findById(id).orElse(null);
         model.addAttribute("team", team);
+        model.addAttribute("allPlayers", playerRepository.findAll());
         return "admin/team-form";
     }
 
