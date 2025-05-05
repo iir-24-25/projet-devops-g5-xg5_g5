@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="admin/layout :: head"></head>
+<body id="page-top">
+<div id="wrapper">
+    <div th:replace="admin/layout :: sidebar"></div>
+    <div id="content-wrapper" class="d-flex flex-column">
+        <div id="content">
+            <div th:replace="admin/layout :: topbar"></div>
+            <div class="container-fluid">
+                <h1 class="h3 mb-4 text-gray-800" th:text="${player.id} == null ? 'Ajouter un joueur' : 'Modifier un joueur'"></h1>
+                <form th:action="@{/admin/players/save}" th:object="${player}" method="post">
+                    <input type="hidden" th:field="*{id}"/>
+                    <div class="form-group">
+                        <label>Nom</label>
+                        <input type="text" class="form-control" th:field="*{username}" required/>
+                    </div>
+                    <div class="form-group">
+                        <label>Âge</label>
+                        <input type="number" class="form-control" th:field="*{age}" required/>
+                    </div>
+                    <div class="form-group">
+                        <label>Nationalité</label>
+                        <input type="text" class="form-control" th:field="*{nationality}" required/>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enregistrer</button>
+                    <a th:href="@{/admin/players}" class="btn btn-secondary">Annuler</a>
+                </form>
+            </div>
+        </div>
+        <div th:replace="admin/layout :: footer"></div>
+    </div>
+</div>
+<div th:replace="admin/layout :: scripts"></div>
+</body>
+</html>
