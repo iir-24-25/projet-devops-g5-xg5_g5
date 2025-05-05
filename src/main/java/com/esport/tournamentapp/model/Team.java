@@ -16,6 +16,9 @@ public class Team {
 
     private String captain; // could be a player's username
 
+    private String country;
+
+
     @ManyToMany
     @JoinTable(
             name = "team_players",
@@ -50,6 +53,10 @@ public class Team {
         return players;
     }
 
+    public String getCountry() {
+        return country;
+    }
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -64,5 +71,9 @@ public class Team {
 
     public void setPlayers(List<Player> players) {
         this.players = players;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
     }
 }
