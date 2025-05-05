@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="admin/layout :: head"></head>
+<body id="page-top">
+<div id="wrapper">
+    <div th:replace="admin/layout :: sidebar"></div>
+    <div id="content-wrapper" class="d-flex flex-column">
+        <div id="content">
+            <div th:replace="admin/layout :: topbar"></div>
+            <div class="container-fluid">
+                <h1 class="h3 mb-4 text-gray-800" th:text="${game.id} == null ? 'Add Game' : 'Edit Game'"></h1>
+                <form th:action="@{/admin/games/save}" th:object="${game}" method="post" enctype="multipart/form-data">
+                    <input type="hidden" th:field="*{id}" />
+
+                    <div class="form-group">
+                        <label for="name">Game Name</label>
+                        <input type="text" class="form-control" id="name" th:field="*{name}" placeholder="Enter game name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="platform">Platform</label>
+                        <input type="text" class="form-control" id="platform" th:field="*{platform}" placeholder="Enter platform" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="image">Image</label>
+                        <input type="file" class="form-control" id="image" name="imageFile"/>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <a th:href="@{/admin/games}" class="btn btn-secondary">Cancel</a>
+                </form>
+            </div>
+        </div>
+        <div th:replace="admin/layout :: footer"></div>
+    </div>
+</div>
+<div th:replace="admin/layout :: scripts"></div>
+</body>
+</html>
