@@ -1,17 +1,15 @@
 package com.esport.tournamentapp.controller;
 
 import com.esport.tournamentapp.model.Match;
-import com.esport.tournamentapp.model.MatchResult;
 import com.esport.tournamentapp.model.Team;
+import com.esport.tournamentapp.model.Tournament;
 import com.esport.tournamentapp.repository.MatchRepository;
-import com.esport.tournamentapp.repository.MatchResultRepository;
 import com.esport.tournamentapp.repository.TeamRepository;
+import com.esport.tournamentapp.repository.TournamentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @Controller
 @RequestMapping("/admin/matches")
@@ -24,7 +22,7 @@ public class MatchViewController {
     private TeamRepository teamRepository;
 
     @Autowired
-    private MatchResultRepository matchResultRepository;
+    private TournamentRepository tournamentRepository;
 
     @GetMapping
     public String listMatches(Model model) {
@@ -36,6 +34,7 @@ public class MatchViewController {
     public String showAddForm(Model model) {
         model.addAttribute("match", new Match());
         model.addAttribute("teams", teamRepository.findAll());
+        model.addAttribute("tournaments", tournamentRepository.findAll());
         return "admin/match-form";
     }
 
@@ -44,6 +43,7 @@ public class MatchViewController {
         Match match = matchRepository.findById(id).orElse(null);
         model.addAttribute("match", match);
         model.addAttribute("teams", teamRepository.findAll());
+        model.addAttribute("tournaments", tournamentRepository.findAll());
         return "admin/match-form";
     }
 

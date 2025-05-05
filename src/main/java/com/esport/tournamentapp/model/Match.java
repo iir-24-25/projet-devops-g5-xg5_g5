@@ -2,6 +2,8 @@ package com.esport.tournamentapp.model;
 
 import jakarta.persistence.*;
 
+import java.util.Date;
+
 @Entity
 @Table(name = "matches")
 public class Match {
@@ -18,6 +20,9 @@ public class Match {
 
     @ManyToOne
     private Team teamB;
+
+    @Temporal(TemporalType.DATE)
+    private Date matchDate;
 
     @OneToOne(cascade = CascadeType.ALL)
     private MatchResult result;
@@ -51,6 +56,11 @@ public class Match {
         return result;
     }
 
+    public Date getMatchDate() {
+        return matchDate;
+    }
+
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -70,4 +80,9 @@ public class Match {
     public void setResult(MatchResult result) {
         this.result = result;
     }
+
+    public void setMatchDate(Date matchDate) {
+        this.matchDate = matchDate;
+    }
+
 }

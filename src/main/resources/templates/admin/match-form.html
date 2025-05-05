@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="admin/layout :: head"></head>
+<body id="page-top">
+<div id="wrapper">
+    <div th:replace="admin/layout :: sidebar"></div>
+    <div id="content-wrapper" class="d-flex flex-column">
+        <div id="content">
+            <div th:replace="admin/layout :: topbar"></div>
+            <div class="container-fluid">
+                <h1 class="h3 mb-4 text-gray-800" th:text="${match.id} == null ? 'Ajouter un match' : 'Modifier le match'"></h1>
+
+                <form th:action="@{/admin/matches/save}" th:object="${match}" method="post">
+                    <input type="hidden" th:field="*{id}" />
+                    <div class="form-group">
+                        <label>Équipe 1</label>
+                        <select class="form-control" th:field="*{teamA}">
+                            <option th:each="team : ${teams}" th:value="${team}" th:text="${team.name}"></option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Équipe 2</label>
+                        <select class="form-control" th:field="*{teamB}">
+                            <option th:each="team : ${teams}" th:value="${team}" th:text="${team.name}"></option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Tournoi</label>
+                        <select class="form-control" th:field="*{tournament}">
+                            <option th:each="t : ${tournaments}" th:value="${t}" th:text="${t.name}"></option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Date du match</label>
+                        <input type="date" class="form-control" th:field="*{matchDate}" />
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Enregistrer</button>
+                    <a th:href="@{/admin/matches}" class="btn btn-secondary">Annuler</a>
+                </form>
+            </div>
+        </div>
+        <div th:replace="admin/layout :: footer"></div>
+    </div>
+</div>
+<div th:replace="admin/layout :: scripts"></div>
+</body>
+</html>
