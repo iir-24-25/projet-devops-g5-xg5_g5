@@ -1,6 +1,7 @@
 package com.esport.tournamentapp.controller;
 
 import com.esport.tournamentapp.model.Tournament;
+import com.esport.tournamentapp.repository.GameRepository;
 import com.esport.tournamentapp.repository.TournamentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,6 +15,10 @@ public class TournamentViewController {
     @Autowired
     private TournamentRepository tournamentRepository;
 
+    @Autowired
+    private GameRepository gameRepository;
+
+
     @GetMapping
     public String listTournaments(Model model) {
         model.addAttribute("tournaments", tournamentRepository.findAll());
@@ -23,6 +28,7 @@ public class TournamentViewController {
     @GetMapping("/add")
     public String showAddForm(Model model) {
         model.addAttribute("tournament", new Tournament());
+        model.addAttribute("allGames", gameRepository.findAll());
         return "admin/tournament-form";
     }
 
@@ -30,6 +36,7 @@ public class TournamentViewController {
     public String showEditForm(@PathVariable Long id, Model model) {
         Tournament tournament = tournamentRepository.findById(id).orElse(null);
         model.addAttribute("tournament", tournament);
+        model.addAttribute("allGames", gameRepository.findAll());
         return "admin/tournament-form";
     }
 

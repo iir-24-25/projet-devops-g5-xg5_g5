@@ -12,6 +12,9 @@ public class Tournament {
     private Long id;
 
     private String name;
+    @ManyToOne
+    @JoinColumn(name = "game_id")
+    private Game game;
 
     private LocalDate startDate;
     private LocalDate endDate;
@@ -37,6 +40,10 @@ public class Tournament {
         return name;
     }
 
+    public Game getGame() {
+        return game;
+    }
+
     public LocalDate getStartDate() {
         return startDate;
     }
@@ -55,6 +62,10 @@ public class Tournament {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void setGame(Game game) {
+        this.game = game;
     }
 
     public void setStartDate(LocalDate startDate) {
