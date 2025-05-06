@@ -18,6 +18,9 @@ public class Team {
 
     private String country;
 
+    private String imageUrl;
+
+
 
     @ManyToMany
     @JoinTable(
@@ -57,6 +60,11 @@ public class Team {
         return country;
     }
 
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -75,5 +83,8 @@ public class Team {
 
     public void setCountry(String country) {
         this.country = country;
+    }
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }
