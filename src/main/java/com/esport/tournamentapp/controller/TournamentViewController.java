@@ -7,6 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.File;
+import java.io.IOException;
 
 @Controller
 @RequestMapping("/admin/tournaments")
@@ -47,8 +51,23 @@ public class TournamentViewController {
     }
 
     @PostMapping("/save")
-    public String saveTournament(@ModelAttribute Tournament tournament) {
+    public String saveTournament(@ModelAttribute Tournament tournament,
+                                 @RequestParam("imageFile") MultipartFile imageFile) throws IOException {
+
+        if (!imageFile.isEmpty()) {
+            String uploadDir = System.getProperty("user.dir") + "/uploads/images";
+            File dir = new File(uploadDir);
+            if (!dir.exists()) dir.mkdirs();
+
+            String fileName = imageFile.getOriginalFilename();
+            File saveFile = new File(dir, fileName);
+            imageFile.transferTo(saveFile);
+
+            tournament.setImageUrl("/images/" + fileName);
+        }
+
         tournamentRepository.save(tournament);
         return "redirect:/admin/tournaments";
     }
+
 }

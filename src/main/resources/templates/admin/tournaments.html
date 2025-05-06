@@ -16,6 +16,7 @@
               <thead>
                 <tr>
                   <th>Name</th>
+                  <th>Image</th>
                   <th>Game</th>
                   <th>Start Date</th>
                   <th>End Date</th>
@@ -24,26 +25,26 @@
                 </tr>
               </thead>
               <tbody>
-                <tr th:each="t : ${tournaments}">
-                  <td th:text="${t.name}"></td>
-                  <td th:text="${t.game.name}"></td>
-                  <td th:text="${t.startDate}"></td>
-                  <td th:text="${t.endDate}"></td>
-                  <td th:text="${t.prizePool} + ' $'"></td>
-                  <td>
-                    <a
-                      th:href="@{/admin/tournaments/edit/{id}(id=${t.id})}"
-                      class="btn btn-sm btn-success"
-                      ><i class="fas fa-edit"></i> Edit</a
-                    >
-                    <a
-                      th:href="@{/admin/tournaments/delete/{id}(id=${t.id})}"
-                      class="btn btn-sm btn-danger"
-                      onclick="return confirm('Delete this tournament?')"
-                      ><i class="fas fa-trash"></i> Delete</a
-                    >
-                  </td>
-                </tr>
+              <tr th:each="t : ${tournaments}">
+                <td th:text="${t.name}"></td>
+                <td>
+                  <img th:if="${t.imageUrl}" th:src="@{${t.imageUrl}}" style="height: 60px;" alt="Tournament Image" />
+                </td>
+                <td th:text="${t.game.name}"></td>
+                <td th:text="${t.startDate}"></td>
+                <td th:text="${t.endDate}"></td>
+                <td th:text="${t.prizePool} + ' $'"></td>
+                <td>
+                  <a th:href="@{/admin/tournaments/edit/{id}(id=${t.id})}" class="btn btn-sm btn-success">
+                    <i class="fas fa-edit"></i> Edit
+                  </a>
+                  <a th:href="@{/admin/tournaments/delete/{id}(id=${t.id})}" class="btn btn-sm btn-danger"
+                     onclick="return confirm('Delete this tournament?')">
+                    <i class="fas fa-trash"></i> Delete
+                  </a>
+                </td>
+              </tr>
+
               </tbody>
             </table>
           </div>

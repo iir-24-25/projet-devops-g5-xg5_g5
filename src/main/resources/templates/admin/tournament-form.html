@@ -17,6 +17,7 @@
               th:action="@{/admin/tournaments/save}"
               th:object="${tournament}"
               method="post"
+              enctype="multipart/form-data"
             >
               <input type="hidden" th:field="*{id}" />
 
@@ -40,7 +41,10 @@
                   ></option>
                 </select>
               </div>
-
+              <div class="form-group">
+                <label>Image</label>
+                <input type="file" name="imageFile" class="form-control" />
+              </div>
               <div class="form-group">
                 <label>Start Date</label>
                 <input

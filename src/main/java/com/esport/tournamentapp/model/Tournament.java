@@ -18,8 +18,9 @@ public class Tournament {
 
     private LocalDate startDate;
     private LocalDate endDate;
-
     private Double prizePool;
+    private String imageUrl;
+
 
     // Constructors
     public Tournament() {}
@@ -29,6 +30,7 @@ public class Tournament {
         this.startDate = startDate;
         this.endDate = endDate;
         this.prizePool = prizePool;
+
     }
 
     // Getters and Setters
@@ -56,6 +58,10 @@ public class Tournament {
         return prizePool;
     }
 
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -79,4 +85,6 @@ public class Tournament {
     public void setPrizePool(Double prizePool) {
         this.prizePool = prizePool;
     }
+
+    public void setImageUrl(String imageUrl) { this.imageUrl = imageUrl; }
 }
