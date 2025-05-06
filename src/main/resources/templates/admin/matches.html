@@ -1,46 +1,58 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="admin/layout :: head"></head>
-<body id="page-top">
-<div id="wrapper">
-    <div th:replace="admin/layout :: sidebar"></div>
-    <div id="content-wrapper" class="d-flex flex-column">
+  <head th:replace="admin/layout :: head"></head>
+  <body id="page-top">
+    <div id="wrapper">
+      <div th:replace="admin/layout :: sidebar"></div>
+      <div id="content-wrapper" class="d-flex flex-column">
         <div id="content">
-            <div th:replace="admin/layout :: topbar"></div>
-            <div class="container-fluid">
-                <h1 class="h3 mb-4 text-gray-800">Liste des matchs</h1>
-                <a class="btn btn-success mb-3" th:href="@{/admin/matches/add}">+ Ajouter un match</a>
-                <table class="table table-bordered">
-                    <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Équipe 1</th>
-                        <th>Équipe 2</th>
-                        <th>Tournoi</th>
-                        <th>Date</th>
-                        <th>Actions</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr th:each="match : ${matches}">
-                        <td th:text="${match.id}"></td>
-                        <td th:text="${match.teamA.name}"></td>
-                        <td th:text="${match.teamB.name}"></td>
-                        <td th:text="${match.tournament.name}"></td>
-                        <td th:text="${#dates.format(match.matchDate, 'dd-MM-yyyy')}"></td>
-                        <td>
-                            <a th:href="@{'/admin/matches/edit/' + ${match.id}}" class="btn btn-primary btn-sm">Modifier</a>
-                            <a th:href="@{'/admin/matches/delete/' + ${match.id}}" class="btn btn-danger btn-sm"
-                               onclick="return confirm('Êtes-vous sûr ?')">Supprimer</a>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
+          <div th:replace="admin/layout :: topbar"></div>
+          <div class="container-fluid">
+            <h1 class="h3 mb-4 text-gray-800">Match List</h1>
+            <a class="btn btn-primary mb-3" th:href="@{/admin/matches/add}"
+              ><i class="fas fa-plus"></i> Add Match</a
+            >
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Team 1</th>
+                  <th>Team 2</th>
+                  <th>Tournament</th>
+                  <th>Date</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr th:each="match : ${matches}">
+                  <td th:text="${match.id}"></td>
+                  <td th:text="${match.teamA.name}"></td>
+                  <td th:text="${match.teamB.name}"></td>
+                  <td th:text="${match.tournament.name}"></td>
+                  <td
+                    th:text="${#dates.format(match.matchDate, 'dd-MM-yyyy')}"
+                  ></td>
+                  <td>
+                    <a
+                      th:href="@{'/admin/matches/edit/' + ${match.id}}"
+                      class="btn btn-success btn-sm"
+                      ><i class="fas fa-edit"></i> Edit</a
+                    >
+                    <a
+                      th:href="@{'/admin/matches/delete/' + ${match.id}}"
+                      class="btn btn-danger btn-sm"
+                      onclick="return confirm('Are you sure?')"
+                      ><i class="fas fa-trash"></i> Delete</a
+                    >
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
         <div th:replace="admin/layout :: footer"></div>
+      </div>
     </div>
-</div>
-<div th:replace="admin/layout :: scripts"></div>
-</body>
+    <div th:replace="admin/layout :: scripts"></div>
+  </body>
 </html>

@@ -1,45 +1,56 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="admin/layout :: head"></head>
-<body id="page-top">
-<div id="wrapper">
-    <div th:replace="admin/layout :: sidebar"></div>
-    <div id="content-wrapper" class="d-flex flex-column">
+  <head th:replace="admin/layout :: head"></head>
+  <body id="page-top">
+    <div id="wrapper">
+      <div th:replace="admin/layout :: sidebar"></div>
+      <div id="content-wrapper" class="d-flex flex-column">
         <div id="content">
-            <div th:replace="admin/layout :: topbar"></div>
-            <div class="container-fluid">
-                <h1 class="h3 mb-4 text-gray-800">Liste des tournois</h1>
-                <a th:href="@{/admin/tournaments/add}" class="btn btn-primary mb-3">+ Ajouter un tournoi</a>
-                <table class="table table-bordered">
-                    <thead>
-                    <tr>
-                        <th>Nom</th>
-                        <th>Game</th>
-                        <th>Date de début</th>
-                        <th>Date de fin</th>
-                        <th>Prize Pool</th>
-                        <th>Actions</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr th:each="t : ${tournaments}">
-                        <td th:text="${t.name}"></td>
-                        <td th:text="${t.game.name}"></td>
-                        <td th:text="${t.startDate}"></td>
-                        <td th:text="${t.endDate}"></td>
-                        <td th:text="${t.prizePool} + ' $'"></td>
-                        <td>
-                            <a th:href="@{/admin/tournaments/edit/{id}(id=${t.id})}" class="btn btn-sm btn-warning">Modifier</a>
-                            <a th:href="@{/admin/tournaments/delete/{id}(id=${t.id})}" class="btn btn-sm btn-danger" onclick="return confirm('Supprimer ce tournoi ?')">Supprimer</a>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
+          <div th:replace="admin/layout :: topbar"></div>
+          <div class="container-fluid">
+            <h1 class="h3 mb-4 text-gray-800">Tournament List</h1>
+            <a th:href="@{/admin/tournaments/add}" class="btn btn-primary mb-3"
+              ><i class="fas fa-plus"></i> Add Tournament</a
+            >
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Game</th>
+                  <th>Start Date</th>
+                  <th>End Date</th>
+                  <th>Prize Pool</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr th:each="t : ${tournaments}">
+                  <td th:text="${t.name}"></td>
+                  <td th:text="${t.game.name}"></td>
+                  <td th:text="${t.startDate}"></td>
+                  <td th:text="${t.endDate}"></td>
+                  <td th:text="${t.prizePool} + ' $'"></td>
+                  <td>
+                    <a
+                      th:href="@{/admin/tournaments/edit/{id}(id=${t.id})}"
+                      class="btn btn-sm btn-success"
+                      ><i class="fas fa-edit"></i> Edit</a
+                    >
+                    <a
+                      th:href="@{/admin/tournaments/delete/{id}(id=${t.id})}"
+                      class="btn btn-sm btn-danger"
+                      onclick="return confirm('Delete this tournament?')"
+                      ><i class="fas fa-trash"></i> Delete</a
+                    >
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
         <div th:replace="admin/layout :: footer"></div>
+      </div>
     </div>
-</div>
-<div th:replace="admin/layout :: scripts"></div>
-</body>
+    <div th:replace="admin/layout :: scripts"></div>
+  </body>
 </html>

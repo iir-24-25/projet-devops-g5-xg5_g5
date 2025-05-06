@@ -1,42 +1,61 @@
-
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="admin/layout :: head"></head>
-<body id="page-top">
-<div id="wrapper">
-    <div th:replace="admin/layout :: sidebar"></div>
-    <div id="content-wrapper" class="d-flex flex-column">
+  <head th:replace="admin/layout :: head"></head>
+  <body id="page-top">
+    <div id="wrapper">
+      <div th:replace="admin/layout :: sidebar"></div>
+      <div id="content-wrapper" class="d-flex flex-column">
         <div id="content">
-            <div th:replace="admin/layout :: topbar"></div>
-            <div class="container-fluid">
-                <h1 class="h3 mb-4 text-gray-800">Games List</h1>
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Platform</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr th:each="game : ${games}">
-                            <td th:text="${game.id}"></td>
-                            <td th:text="${game.name}"></td>
-                            <td th:text="${game.platform}"></td>
-                            <td>
-                                <a th:href="@{'/admin/games/edit/' + ${game.id}}" class="btn btn-primary btn-sm">Edit</a>
-                                <a th:href="@{'/admin/games/delete/' + ${game.id}}" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this game?');">Delete</a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <a href="/admin/games/add" class="btn btn-success">Add New Game</a>
-            </div>
+          <div th:replace="admin/layout :: topbar"></div>
+          <div class="container-fluid">
+            <h1 class="h3 mb-4 text-gray-800">Games List</h1>
+            <a th:href="@{/admin/games/add}" class="btn btn-primary mb-3"
+              ><i class="fas fa-plus"></i> Add Game</a
+            >
+
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Image</th>
+                  <th>Name</th>
+                  <th>Platform</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr th:each="game : ${games}">
+                  <td th:text="${game.id}"></td>
+                  <td class="text-center">
+                    <img
+                      th:src="@{${game.imageUrl}}"
+                      alt="Game Image"
+                      style="height: 60px"
+                    />
+                  </td>
+                  <td th:text="${game.name}"></td>
+                  <td th:text="${game.platform}"></td>
+                  <td>
+                    <a
+                      th:href="@{'/admin/games/edit/' + ${game.id}}"
+                      class="btn btn-success btn-sm"
+                      ><i class="fas fa-edit"></i> Edit</a
+                    >
+                    <a
+                      th:href="@{'/admin/games/delete/' + ${game.id}}"
+                      class="btn btn-danger btn-sm"
+                      onclick="return confirm('Are you sure you want to delete this game?');"
+                      ><i class="fas fa-trash"></i> Delete</a
+                    >
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
         <div th:replace="admin/layout :: footer"></div>
+      </div>
     </div>
-</div>
-<div th:replace="admin/layout :: scripts"></div>
-</body>
+    <div th:replace="admin/layout :: scripts"></div>
+  </body>
 </html>

@@ -35,7 +35,7 @@
         <!-- Sidebar - Brand -->
         <a
           class="sidebar-brand d-flex align-items-center justify-content-center"
-          href="http://localhost:8080/admin"
+          th:href="@{/admin}"
         >
           <div class="sidebar-brand-icon">
             <img
@@ -49,7 +49,7 @@
         <hr class="sidebar-divider my-0" />
         <!-- Nav Item - Dashboard -->
         <li class="nav-item active">
-          <a class="nav-link" href="http://localhost:8080/admin">
+          <a class="nav-link" th:href="@{/admin}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span>
           </a>
@@ -122,131 +122,47 @@
         <!-- Divider -->
         <!-- <hr class="sidebar-divider" />-->
         <!-- Heading -->
-        <div class="sidebar-heading">Addons</div>
+        <div class="sidebar-heading">Panel</div>
         <!-- Nav Item - Tables -->
         <li class="nav-item">
           <a class="nav-link" th:href="@{/admin/users}">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Users</span></a
-          >
+            <i class="fas fa-fw fa-user"></i>
+            <span>Users</span>
+          </a>
         </li>
-        <!-- Nav Item - Tables -->
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/admin/players}">
+            <i class="fas fa-fw fa-users"></i>
+            <span>Players</span>
+          </a>
+        </li>
         <li class="nav-item">
           <a class="nav-link" th:href="@{/admin/games}">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Games</span></a
-          >
+            <i class="fas fa-fw fa-gamepad"></i>
+            <span>Games</span>
+          </a>
         </li>
-        <!-- Nav Item - Tables -->
         <li class="nav-item">
           <a class="nav-link" th:href="@{/admin/teams}">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Teams</span></a
-          >
+            <i class="fas fa-fw fa-users-cog"></i>
+            <span>Teams</span>
+          </a>
         </li>
-        <!-- Nav Item - Tables -->
         <li class="nav-item">
-          <a class="nav-link" th:href="@{/admin/games}">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Matches</span></a
-          >
+          <a class="nav-link" th:href="@{/admin/matches}">
+            <i class="fas fa-fw fa-futbol"></i>
+            <span>Matches</span>
+          </a>
         </li>
-        <!-- Nav Item - Tables -->
         <li class="nav-item">
           <a class="nav-link" th:href="@{/admin/tournaments}">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Tournaments</span></a
-          >
-        </li>
-        <!-- Nav Item - Charts -->
-        <li class="nav-item">
-          <a class="nav-link" href="charts.html">
-            <i class="fas fa-fw fa-chart-area"></i>
-            <span>Charts</span></a
-          >
-        </li>
-        <!-- Nav Item - Pages Collapse Menu -->
-        <li class="nav-item">
-          <a
-            aria-controls="collapsePages"
-            aria-expanded="true"
-            class="nav-link collapsed"
-            data-target="#collapsePages"
-            data-toggle="collapse"
-            href="#"
-          >
-            <i class="fas fa-fw fa-folder"></i>
-            <span>Pages</span>
+            <i class="fas fa-fw fa-trophy"></i>
+            <span>Tournaments</span>
           </a>
-          <div
-            aria-labelledby="headingPages"
-            class="collapse"
-            data-parent="#accordionSidebar"
-            id="collapsePages"
-          >
-            <div class="bg-white py-2 collapse-inner rounded">
-              <h6 class="collapse-header">Login Screens:</h6>
-              <a class="collapse-item" href="../login.html">Login</a>
-              <a class="collapse-item" href="register.html">Register</a>
-              <a class="collapse-item" href="forgot-password.html"
-                >Forgot Password</a
-              >
-              <div class="collapse-divider"></div>
-              <h6 class="collapse-header">Other Pages:</h6>
-              <a class="collapse-item" href="404.html">404 Page</a>
-              <a class="collapse-item" href="blank.html">Blank Page</a>
-            </div>
-          </div>
-        </li>
-
-        <!-- Nav Item - Tables -->
-        <li class="nav-item">
-          <a class="nav-link" href="http://localhost:8080/admin/users">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Users</span></a
-          >
-        </li>
-        <!-- Nav Item - Tables -->
-        <li class="nav-item">
-          <a class="nav-link" href="http://localhost:8080/admin/players">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Players</span></a
-          >
-        </li>
-        <!-- Nav Item - Tables -->
-        <li class="nav-item">
-          <a class="nav-link" href="http://localhost:8080/admin/teams">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Teams</span></a
-          >
-        </li>
-        <!-- Nav Item - Tables -->
-        <li class="nav-item">
-          <a class="nav-link" href="http://localhost:8080/admin/tournaments">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Tournaments</span></a
-          >
-        </li>
-        <!-- Nav Item - Tables -->
-        <li class="nav-item">
-          <a class="nav-link" href="http://localhost:8080/admin/games">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Games</span></a
-          >
-        </li>
-        <!-- Nav Item - Tables -->
-        <li class="nav-item">
-          <a class="nav-link" href="http://localhost:8080/admin/matches">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Matches</span></a
-          >
         </li>
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block" />
-        <!-- Sidebar Toggler (Sidebar) -->
-        <div class="text-center d-none d-md-inline">
-          <button class="rounded-circle border-0" id="sidebarToggle"></button>
-        </div>
+
         <!-- Sidebar Message -->
         <li class="nav-item">
           <a class="nav-link" th:href="@{/logout}">
@@ -254,7 +170,6 @@
             Logout
           </a>
         </li>
-
       </ul>
     </div>
 
@@ -500,7 +415,7 @@
               >
               <img
                 class="img-profile rounded-circle"
-                th:src="@{/img/logo-d-1-1.png}"
+                th:src="@{/img/gal-2-6.jpg}"
                 alt="Profile"
               />
             </a>
@@ -522,12 +437,7 @@
                 Activity Log
               </a>
               <div class="dropdown-divider"></div>
-              <a
-                class="dropdown-item"
-                data-target="#logoutModal"
-                data-toggle="modal"
-                href="#"
-              >
+              <a class="dropdown-item" th:href="@{/logout}">
                 <i
                   class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"
                 ></i>
@@ -551,12 +461,12 @@
 
     <div th:fragment="scripts">
       <script th:src="@{/vendor/jquery/jquery.min.js}"></script>
-      <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-      <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-      <script src="js/sb-admin-2.min.js"></script>
-      <script src="vendor/chart.js/Chart.min.js"></script>
-      <script src="js/demo/chart-area-demo.js"></script>
-      <script src="js/demo/chart-pie-demo.js"></script>
+      <script th:src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+      <script th:src="@{/vendor/jquery-easing/jquery.easing.min.js}"></script>
+      <script th:src="@{/js/sb-admin-2.min.js}"></script>
+      <script th:src="@{/vendor/chart.js/Chart.min.js}"></script>
+      <script th:src="@{/js/demo/chart-area-demo.js}"></script>
+      <script th:src="@{/js/demo/chart-pie-demo.js}"></script>
     </div>
   </body>
 </html>

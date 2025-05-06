@@ -1,52 +1,78 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="admin/layout :: head"></head>
-<body id="page-top">
-<div id="wrapper">
-    <div th:replace="admin/layout :: sidebar"></div>
-    <div id="content-wrapper" class="d-flex flex-column">
+  <head th:replace="admin/layout :: head"></head>
+  <body id="page-top">
+    <div id="wrapper">
+      <div th:replace="admin/layout :: sidebar"></div>
+      <div id="content-wrapper" class="d-flex flex-column">
         <div id="content">
-            <div th:replace="admin/layout :: topbar"></div>
-            <div class="container-fluid">
-                <h1 class="h3 mb-4 text-gray-800" th:text="${match.id} == null ? 'Ajouter un match' : 'Modifier le match'"></h1>
+          <div th:replace="admin/layout :: topbar"></div>
+          <div class="container-fluid">
+            <h1
+              class="h3 mb-4 text-gray-800"
+              th:text="${match.id} == null ? 'Add Match' : 'Edit Match'"
+            ></h1>
 
-                <form th:action="@{/admin/matches/save}" th:object="${match}" method="post">
-                    <input type="hidden" th:field="*{id}" />
+            <form
+              th:action="@{/admin/matches/save}"
+              th:object="${match}"
+              method="post"
+            >
+              <input type="hidden" th:field="*{id}" />
 
-                    <div class="form-group">
-                        <label>Équipe A</label>
-                        <select class="form-control" th:field="*{teamA.id}">
-                            <option th:each="team : ${teams}" th:value="${team.id}" th:text="${team.name}"></option>
-                        </select>
-                    </div>
+              <div class="form-group">
+                <label>Team A</label>
+                <select class="form-control" th:field="*{teamA.id}">
+                  <option
+                    th:each="team : ${teams}"
+                    th:value="${team.id}"
+                    th:text="${team.name}"
+                  ></option>
+                </select>
+              </div>
 
-                    <div class="form-group">
-                        <label>Équipe B</label>
-                        <select class="form-control" th:field="*{teamB.id}">
-                            <option th:each="team : ${teams}" th:value="${team.id}" th:text="${team.name}"></option>
-                        </select>
-                    </div>
+              <div class="form-group">
+                <label>Team B</label>
+                <select class="form-control" th:field="*{teamB.id}">
+                  <option
+                    th:each="team : ${teams}"
+                    th:value="${team.id}"
+                    th:text="${team.name}"
+                  ></option>
+                </select>
+              </div>
 
-                    <div class="form-group">
-                        <label>Tournoi</label>
-                        <select class="form-control" th:field="*{tournament.id}">
-                            <option th:each="t : ${tournaments}" th:value="${t.id}" th:text="${t.name}"></option>
-                        </select>
-                    </div>
+              <div class="form-group">
+                <label>Tournament</label>
+                <select class="form-control" th:field="*{tournament.id}">
+                  <option
+                    th:each="t : ${tournaments}"
+                    th:value="${t.id}"
+                    th:text="${t.name}"
+                  ></option>
+                </select>
+              </div>
 
-                    <div class="form-group">
-                        <label>Date du match</label>
-                        <input type="date" class="form-control" th:field="*{matchDate}" required/>
-                    </div>
+              <div class="form-group">
+                <label>Match Date</label>
+                <input
+                  type="date"
+                  class="form-control"
+                  th:field="*{matchDate}"
+                  required
+                />
+              </div>
 
-                    <button type="submit" class="btn btn-primary">Enregistrer</button>
-                    <a th:href="@{/admin/matches}" class="btn btn-secondary">Annuler</a>
-                </form>
-            </div>
+              <button type="submit" class="btn btn-primary">Save</button>
+              <a th:href="@{/admin/matches}" class="btn btn-secondary"
+                >Cancel</a
+              >
+            </form>
+          </div>
         </div>
         <div th:replace="admin/layout :: footer"></div>
+      </div>
     </div>
-</div>
-<div th:replace="admin/layout :: scripts"></div>
-</body>
+    <div th:replace="admin/layout :: scripts"></div>
+  </body>
 </html>
