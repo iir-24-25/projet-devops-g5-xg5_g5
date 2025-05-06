@@ -6,6 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.File;
+import java.io.IOException;
 
 @Controller
 @RequestMapping("/admin/players")
@@ -34,10 +38,25 @@ public class PlayerViewController {
     }
 
     @PostMapping("/save")
-    public String savePlayer(@ModelAttribute Player player) {
+    public String savePlayer(@ModelAttribute Player player,
+                             @RequestParam("imageFile") MultipartFile imageFile) throws IOException {
+
+        if (!imageFile.isEmpty()) {
+            String uploadDir = System.getProperty("user.dir") + "/uploads/images";
+            File dir = new File(uploadDir);
+            if (!dir.exists()) dir.mkdirs();
+
+            String fileName = imageFile.getOriginalFilename();
+            File saveFile = new File(dir, fileName);
+            imageFile.transferTo(saveFile);
+
+            player.setImageUrl("/images/" + fileName);
+        }
+
         playerRepository.save(player);
         return "redirect:/admin/players";
     }
+
 
     @GetMapping("/delete/{id}")
     public String deletePlayer(@PathVariable Long id) {

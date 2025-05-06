@@ -17,6 +17,7 @@
                 <tr>
                   <th>ID</th>
                   <th>Name</th>
+<!--                  <th>Image</th>-->
                   <th>Age</th>
                   <th>Nationality</th>
                   <th>Actions</th>
@@ -26,6 +27,8 @@
                 <tr th:each="player : ${players}">
                   <td th:text="${player.id}"></td>
                   <td th:text="${player.username}"></td>
+<!--                  <td><img th:if="${player.imageUrl}" th:src="@{${player.imageUrl}}" style="height: 60px;" />-->
+                  </td>
                   <td th:text="${player.age}"></td>
                   <td th:text="${player.nationality}"></td>
                   <td>
