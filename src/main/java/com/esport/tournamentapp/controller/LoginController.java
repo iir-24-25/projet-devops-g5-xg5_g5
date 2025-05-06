@@ -8,33 +8,30 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-public class AuthController {
+public class LoginController {
 
     @Autowired
     private AdminRepository adminRepository;
 
-   /* @GetMapping("/login")
+    @GetMapping("/login")
     public String showLoginForm() {
-        return "login"; // loads login.html
+        return "login";
     }
 
     @PostMapping("/login")
-    public String login(@RequestParam String username,
-                        @RequestParam String password,
-                        HttpSession session) {
+    public String login(@RequestParam String username, @RequestParam String password, HttpSession session) {
         Admin admin = adminRepository.findByUsername(username);
         if (admin != null && admin.getPassword().equals(password)) {
             session.setAttribute("admin", admin);
-            return "redirect:/admin/dashboard"; // or whatever your main admin page is
+            return "redirect:/admin";
+        } else {
+            return "redirect:/login?error=true";
         }
-
-        // Login failed
-        return "redirect:/login?error";
     }
 
     @GetMapping("/logout")
     public String logout(HttpSession session) {
         session.invalidate();
-        return "redirect:/login?logout";
-    } */
+        return "redirect:/login?logout=true";
+    }
 }
