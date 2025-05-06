@@ -13,6 +13,8 @@ public class Player {
     private String username;
     private Integer age;
     private String nationality;
+    private String imageUrl;
+
 
     // Constructors
     public Player() {}
@@ -40,6 +42,10 @@ public class Player {
         return nationality;
     }
 
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -54,5 +60,9 @@ public class Player {
 
     public void setNationality(String nationality) {
         this.nationality = nationality;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }
