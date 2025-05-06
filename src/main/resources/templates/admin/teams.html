@@ -16,29 +16,31 @@
               <thead>
                 <tr>
                   <th>ID</th>
+                  <th>Image</th>
                   <th>Name</th>
                   <th>Country</th>
                   <th>Actions</th>
                 </tr>
               </thead>
               <tbody>
-                <tr th:each="team : ${teams}">
-                  <td th:text="${team.id}">1</td>
-                  <td th:text="${team.name}">Name</td>
-                  <td th:text="${team.country}">Country</td>
-                  <td>
-                    <a
-                      th:href="@{'/admin/teams/edit/' + ${team.id}}"
-                      class="btn btn-sm btn-success"
-                      ><i class="fas fa-edit"></i> Edit</a
-                    >
-                    <a
-                      th:href="@{'/admin/teams/delete/' + ${team.id}}"
-                      class="btn btn-sm btn-danger"
-                      ><i class="fas fa-trash"></i> Delete</a
-                    >
-                  </td>
-                </tr>
+              <tr th:each="team : ${teams}">
+                <td th:text="${team.id}">1</td>
+                <td>
+                  <img th:src="@{${team.imageUrl}}" alt="Team Image" style="height: 60px;" />
+
+                </td>
+                <td th:text="${team.name}">Name</td>
+                <td th:text="${team.country}">Country</td>
+                <td>
+                  <a th:href="@{'/admin/teams/edit/' + ${team.id}}" class="btn btn-sm btn-success">
+                    <i class="fas fa-edit"></i> Edit
+                  </a>
+                  <a th:href="@{'/admin/teams/delete/' + ${team.id}}" class="btn btn-sm btn-danger">
+                    <i class="fas fa-trash"></i> Delete
+                  </a>
+                </td>
+              </tr>
+
               </tbody>
             </table>
           </div>

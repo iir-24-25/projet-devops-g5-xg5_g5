@@ -10,12 +10,18 @@
             <div class="container-fluid">
                 <h1 class="h3 mb-4 text-gray-800" th:text="${team.id} == null ? 'Ajouter une équipe' : 'Modifier l\'équipe'"></h1>
 
-                <form th:action="@{/admin/teams/save}" th:object="${team}" method="post">
+                <form th:action="@{/admin/teams/save}" th:object="${team}" method="post" enctype="multipart/form-data">
+
                     <input type="hidden" th:field="*{id}" />
                     <div class="form-group">
                         <label>Nom de l'équipe</label>
                         <input type="text" class="form-control" th:field="*{name}" required />
                     </div>
+                    <div class="form-group">
+                        <label>Image</label>
+                        <input type="file" class="form-control" name="imageFile" accept="image/*" />
+                    </div>
+
                     <div class="form-group">
                         <label>Capitaine</label>
                         <input type="text" class="form-control" th:field="*{captain}" />
@@ -50,7 +56,7 @@
 
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Enregistrer</button>
+                    <button type="submit" class="btn btn-primary">Save</button>
                     <a th:href="@{/admin/teams}" class="btn btn-secondary">Annuler</a>
                 </form>
             </div>

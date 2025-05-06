@@ -7,6 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.File;
+import java.io.IOException;
 
 @Controller
 @RequestMapping("/admin/teams")
@@ -39,10 +43,25 @@ public class TeamViewController {
     }
 
     @PostMapping("/save")
-    public String saveTeam(@ModelAttribute Team team) {
+    public String saveTeam(@ModelAttribute Team team,
+                           @RequestParam("imageFile") MultipartFile imageFile) throws IOException {
+        if (!imageFile.isEmpty()) {
+            String uploadDir = System.getProperty("user.dir") + "/uploads/images";
+            File dir = new File(uploadDir);
+            if (!dir.exists()) dir.mkdirs();
+
+            String fileName = imageFile.getOriginalFilename();
+            File saveFile = new File(dir, fileName);
+            imageFile.transferTo(saveFile);
+
+            team.setImageUrl("/images/" + fileName);
+        }
+
         teamRepository.save(team);
         return "redirect:/admin/teams";
     }
+
+
 
     @GetMapping("/delete/{id}")
     public String deleteTeam(@PathVariable Long id) {
