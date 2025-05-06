@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/admin/users")
 public class UserViewController {
@@ -15,10 +17,18 @@ public class UserViewController {
     private UserRepository userRepository;
 
     @GetMapping
-    public String listUsers(Model model) {
-        model.addAttribute("users", userRepository.findAll());
+    public String listUsers(@RequestParam(required = false) String email, Model model) {
+        List<User> users;
+        if (email != null && !email.isEmpty()) {
+            users = userRepository.findByEmailContainingIgnoreCase(email);
+        } else {
+            users = userRepository.findAll();
+        }
+        model.addAttribute("users", users);
+        model.addAttribute("email", email); // Preserve input value
         return "admin/users";
     }
+
 
     @GetMapping("/delete/{id}")
     public String deleteUser(@PathVariable Long id) {

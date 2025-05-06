@@ -12,7 +12,11 @@
             <a class="btn btn-primary mb-3" th:href="@{/admin/users/add}">
               <i class="fas fa-plus"></i> Add User
             </a>
-
+            <form th:action="@{/admin/users}" method="get" class="form-inline mb-3">
+              <input type="text" name="email" th:value="${email}" class="form-control mr-2" placeholder="Search by email">
+              <button type="submit" class="btn btn-primary">Search</button>
+              <a th:href="@{/admin/users}" class="btn btn-secondary ml-2">Reset</a>
+            </form>
             <table class="table table-bordered table-striped">
               <thead>
                 <tr>
