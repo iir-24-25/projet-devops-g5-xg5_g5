@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
+import java.util.List;
 
 @Controller
 @RequestMapping("/admin/matches")
@@ -27,10 +28,24 @@ public class MatchViewController {
     private TournamentRepository tournamentRepository;
 
     @GetMapping
-    public String listMatches(Model model) {
-        model.addAttribute("matches", matchRepository.findAll());
+    public String listMatches(@RequestParam(required = false) Long tournamentId,
+                              Model model) {
+
+        List<Match> matches;
+
+        if (tournamentId != null) {
+            matches = matchRepository.findByTournamentId(tournamentId);
+        } else {
+            matches = matchRepository.findAll();
+        }
+
+        List<Tournament> tournaments = matchRepository.findDistinctTournaments();
+
+        model.addAttribute("matches", matches);
+        model.addAttribute("tournaments", tournaments);
         return "admin/matches";
     }
+
 
     @GetMapping("/add")
     public String showAddForm(Model model) {

@@ -12,6 +12,17 @@
             <a class="btn btn-primary mb-3" th:href="@{/admin/matches/add}"
               ><i class="fas fa-plus"></i> Add Match</a
             >
+            <form method="get" class="form-inline mb-3">
+              <select name="tournamentId" class="form-control mr-2">
+                <option value="">All Tournaments</option>
+                <option th:each="t : ${tournaments}" th:value="${t.id}" th:text="${t.name}"
+                        th:selected="${param.tournamentId} == ${t.id}"></option>
+              </select>
+              <button type="submit" class="btn btn-primary">Filter</button>
+              <a th:href="@{/admin/matches}" class="btn btn-secondary ml-2">Reset</a>
+
+            </form>
+
             <table class="table table-bordered">
               <thead>
                 <tr>
