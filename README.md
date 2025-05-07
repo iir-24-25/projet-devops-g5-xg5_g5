@@ -1,5 +1,6 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/hAE1BRhd)
 [![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-2972f46106e565e64193e422d61a12cf1da4916b45550586e14ef0a7c637dd04.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=19420634)
+
 # 🎮 Application Web de Gestion de Tournois E-Sport
 
 Cette application web permet de gérer des tournois e-sport en ligne via une interface d’administration complète. Elle est développée avec **Spring Boot**, **Thymeleaf** et **MySQL**.
@@ -11,17 +12,17 @@ Cette application web permet de gérer des tournois e-sport en ligne via une int
 - Connexion/Déconnexion de l’administrateur
 - Inscription et gestion des utilisateurs
 - Opérations CRUD sur :
-    - **Utilisateurs** (recherche par email)
-    - **Joueurs** (recherche par nom, filtre par nationalité)
-    - **Jeux** (recherche par nom, filtre par plateforme)
-    - **Équipes** (recherche par nom, filtre par pays)
-    - **Matchs** (filtre par tournoi)
-    - **Tournois** (recherche par nom, filtre par jeu)
+  - **Utilisateurs** (recherche par email)
+  - **Joueurs** (recherche par nom, filtre par nationalité)
+  - **Jeux** (recherche par nom, filtre par plateforme)
+  - **Équipes** (recherche par nom, filtre par pays)
+  - **Matchs** (filtre par tournoi)
+  - **Tournois** (recherche par nom, filtre par jeu)
 - Upload d’image pour :
-    - Joueurs
-    - Équipes
-    - Jeux
-    - Tournois
+  - Joueurs
+  - Équipes
+  - Jeux
+  - Tournois
 - Tableau de bord administrateur
 - Page 404 personnalisée
 
@@ -71,17 +72,17 @@ src/
 
 ```bash
 git clone https://github.com/iir-24-25/projet-devops-g5-xg5_g5.git
-cd esport-tournament-app
+cd projet-devops-g5-xg5_g5
 ```
 
 ### 2. Créer la base de données
 
-Créer une base MySQL nommée  `esport_db` et importer le dump SQL .
+Créer une base MySQL nommée `esport_db` et importer le dump SQL .
 
 Sinon, la base sera générée automatiquement par JPA. Ajoute manuellement l’admin par défaut :
 
 ```sql
-INSERT INTO admin (username, password) VALUES ('admin', 'admin');
+INSERT INTO admins (username, password) VALUES ('admin', 'admin');
 ```
 
 ### 3. Configurer `application.properties`
