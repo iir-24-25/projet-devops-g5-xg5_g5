@@ -21,6 +21,7 @@
                         th:selected="${param.platform} == ${p}"></option>
               </select>
               <button type="submit" class="btn btn-primary">Filter</button>
+              <a th:href="@{/admin/games}" class="btn btn-secondary ml-2">Reset</a>
             </form>
 
             <table class="table table-bordered">

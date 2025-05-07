@@ -21,6 +21,8 @@
                         th:selected="${param.country} == ${c}"></option>
               </select>
               <button type="submit" class="btn btn-primary">Filter</button>
+              <a th:href="@{/admin/teams}" class="btn btn-secondary ml-2">Reset</a>
+
             </form>
 
             <table class="table table-bordered">
