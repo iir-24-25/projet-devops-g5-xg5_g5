@@ -12,6 +12,22 @@
             <a th:href="@{/admin/players/add}" class="btn btn-primary mb-3">
               <i class="fas fa-plus"></i> Add Player</a
             >
+            <form method="get" th:action="@{/admin/players}" class="form-inline mb-3">
+            <input type="text" name="name" class="form-control mr-2" placeholder="Search by name" th:value="${name}" />
+
+            <select name="nationality" class="form-control mr-2">
+              <option value="">All Nationalities</option>
+              <option th:each="n : ${nationalities}"
+                      th:value="${n}"
+                      th:text="${n}"
+                      th:selected="${nationality} == ${n}">
+              </option>
+            </select>
+
+            <button type="submit" class="btn btn-primary">Filter</button>
+          </form>
+
+
             <table class="table table-bordered">
               <thead>
                 <tr>
