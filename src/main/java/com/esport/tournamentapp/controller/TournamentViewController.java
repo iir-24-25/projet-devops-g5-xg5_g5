@@ -1,5 +1,6 @@
 package com.esport.tournamentapp.controller;
 
+import com.esport.tournamentapp.model.Game;
 import com.esport.tournamentapp.model.Tournament;
 import com.esport.tournamentapp.repository.GameRepository;
 import com.esport.tournamentapp.repository.TournamentRepository;
@@ -11,6 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 @Controller
 @RequestMapping("/admin/tournaments")
@@ -24,10 +26,20 @@ public class TournamentViewController {
 
 
     @GetMapping
-    public String listTournaments(Model model) {
-        model.addAttribute("tournaments", tournamentRepository.findAll());
+    public String listTournaments(@RequestParam(required = false) Long gameId,
+                                  @RequestParam(required = false) String name,
+                                  Model model) {
+
+        List<Tournament> tournaments = tournamentRepository.searchByGameAndName(gameId, name);
+        List<Game> games = tournamentRepository.findDistinctGames();
+
+        model.addAttribute("tournaments", tournaments);
+        model.addAttribute("games", games);
+        model.addAttribute("name", name);
+        model.addAttribute("gameId", gameId);
         return "admin/tournaments";
     }
+
 
     @GetMapping("/add")
     public String showAddForm(Model model) {
