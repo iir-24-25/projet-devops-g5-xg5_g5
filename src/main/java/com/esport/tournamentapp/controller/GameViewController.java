@@ -10,6 +10,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 @Controller
 @RequestMapping("/admin/games")
@@ -18,11 +19,26 @@ public class GameViewController {
     @Autowired
     private GameRepository gameRepository;
 
+
     @GetMapping
-    public String listGames(Model model) {
-        model.addAttribute("games", gameRepository.findAll());
+    public String listGames(@RequestParam(required = false) String keyword,
+                            @RequestParam(required = false) String platform,
+                            Model model) {
+        List<Game> games;
+        if (keyword != null && !keyword.isEmpty()) {
+            games = gameRepository.findByNameContainingIgnoreCase(keyword);
+        } else if (platform != null && !platform.isEmpty()) {
+            games = gameRepository.findByPlatform(platform);
+        } else {
+            games = gameRepository.findAll();
+        }
+
+        List<String> platforms = gameRepository.findDistinctPlatforms();
+        model.addAttribute("games", games);
+        model.addAttribute("platforms", platforms);
         return "admin/games";
     }
+
 
     @GetMapping("/delete/{id}")
     public String deleteGame(@PathVariable Long id) {

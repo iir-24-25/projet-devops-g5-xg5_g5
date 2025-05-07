@@ -11,6 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 @Controller
 @RequestMapping("/admin/teams")
@@ -22,10 +23,26 @@ public class TeamViewController {
     private TeamRepository teamRepository;
 
     @GetMapping
-    public String listTeams(Model model) {
-        model.addAttribute("teams", teamRepository.findAll());
+    public String listTeams(@RequestParam(required = false) String keyword,
+                            @RequestParam(required = false) String country,
+                            Model model) {
+
+        List<Team> teams;
+
+        if (keyword != null && !keyword.isEmpty()) {
+            teams = teamRepository.findByNameContainingIgnoreCase(keyword);
+        } else if (country != null && !country.isEmpty()) {
+            teams = teamRepository.findByCountry(country);
+        } else {
+            teams = teamRepository.findAll();
+        }
+
+        List<String> countries = teamRepository.findDistinctCountries();
+        model.addAttribute("teams", teams);
+        model.addAttribute("countries", countries);
         return "admin/teams";
     }
+
 
     @GetMapping("/add")
     public String showAddForm(Model model) {
