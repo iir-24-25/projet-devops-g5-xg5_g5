@@ -15,6 +15,8 @@ public interface TournamentRepository extends JpaRepository<Tournament, Long> {
     List<Tournament> searchByGameAndName(@Param("gameId") Long gameId, @Param("name") String name);
     @Query("SELECT DISTINCT t.game FROM Tournament t")
     List<Game> findDistinctGames();
+    Tournament findTopByOrderByEndDateDesc();
+
 
 
 }

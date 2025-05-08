@@ -1,5 +1,6 @@
 package com.esport.tournamentapp.controller;
 
+import com.esport.tournamentapp.model.Tournament;
 import com.esport.tournamentapp.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,13 +15,23 @@ public class DashboardController {
     @Autowired private TeamRepository teamRepo;
     @Autowired private TournamentRepository tournamentRepo;
     @Autowired private MatchRepository matchRepo;
+    @Autowired private UserRepository userRepository;
+
 
     @GetMapping
     public String dashboard(Model model) {
+        model.addAttribute("userCount", userRepository.count());
         model.addAttribute("playerCount", playerRepo.count());
         model.addAttribute("teamCount", teamRepo.count());
         model.addAttribute("tournamentCount", tournamentRepo.count());
         model.addAttribute("matchCount", matchRepo.count());
-        return "admin/index"; // if you move it under templates/admin/
+
+        Tournament lastTournament = tournamentRepo.findTopByOrderByEndDateDesc();
+        model.addAttribute("lastWinner", lastTournament != null && lastTournament.getWinner() != null
+                ? lastTournament.getWinner().getName()
+                : "No winner yet");
+
+        return "admin/index";
     }
+
 }
