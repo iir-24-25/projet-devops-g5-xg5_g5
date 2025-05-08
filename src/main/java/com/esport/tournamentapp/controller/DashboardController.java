@@ -31,7 +31,7 @@ public class DashboardController {
                 ? lastTournament.getWinner().getName()
                 : "No winner yet");
 
-        return "admin/index";
+        return "admin/admin-dashboard";
     }
 
 }
