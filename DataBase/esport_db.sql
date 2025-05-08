@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3307
--- Generation Time: May 08, 2025 at 08:16 AM
+-- Generation Time: May 08, 2025 at 08:58 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -148,7 +148,37 @@ INSERT INTO `players` (`id`, `age`, `nationality`, `username`, `image_url`) VALU
 (7, 31, 'Ukraine', 'b1t', NULL),
 (8, 33, 'Ukraine', 'm0NESY', NULL),
 (9, 33, 'Ukraine', 'Starix', NULL),
-(10, 34, 'Ukraine', 'flamie', NULL);
+(10, 34, 'Ukraine', 'flamie', NULL),
+(11, 25, 'Russian', 'Ax1Le', NULL),
+(12, 24, 'USA', 'Xeppaa', '/images/Xeppaa.png'),
+(13, 23, 'USA', 'nafany', '/images/nafany.png'),
+(14, 30, 'Canadian', 'Shroud', '/images/Shroud.png'),
+(15, 27, 'USA', 'Stewie2k', '/images/Stewie2k.png'),
+(16, 28, 'Denmark', 'Karrigan', '/images/Karrigan.png'),
+(17, 30, 'Norwegian', 'Rain', '/images/Rain.png'),
+(18, 27, 'USA', 'Elige', '/images/Elige.png'),
+(19, 22, 'Slovakien', 'Frozen', '/images/Frozen.png'),
+(20, 24, 'Latvian', 'Broky', '/images/Broky.png'),
+(21, 25, 'Denmak', 'Caps', '/images/Caps.png'),
+(22, 29, 'Denmark', 'HooXI', '/images/Hooxi.png'),
+(23, 29, 'French', 'KennyS', '/images/KennyS.png'),
+(24, 29, 'Australien', 'jks', '/images/jks.png'),
+(25, 28, 'Russian', 'Nikola ', '/images/Nikola.png'),
+(26, 24, 'Canadian', 'TenZ', '/images/TenZ.png'),
+(27, 22, 'USA', 'Curry', '/images/Curry.png'),
+(28, 27, 'Brazil', 'Sacy', '/images/Sacy.png'),
+(29, 25, 'Brazil', 'pANcada', '/images/pANcada.png'),
+(30, 27, 'USA', 'Zellsis', '/images/Zellsis.png'),
+(31, 25, 'USA', 'oSee', '/images/oSee.png'),
+(32, 25, 'Latvian', 'YEKINDAR', '/images/Latvian.png'),
+(33, 29, 'Canadian', 'nitr0', '/images/nitr0.png'),
+(34, 35, 'Eric', 'Eric Hoag', '/images/Eric.png'),
+(35, 27, 'Canadian', 'NAF', '/images/NAF.png'),
+(36, 26, 'Swedish', 'Rekkles', '/images/Rekkles.png'),
+(37, 19, 'USA', 'Oscarinin', '/images/oscarinin.png'),
+(38, 21, 'Swedish', 'Leo', '/images/Leo.png'),
+(39, 20, 'Finnish', 'Cyanide', '/images/Cyanide.jpg'),
+(40, 33, 'French', 'YellOwStaR', '/images/YellOwStaR.png');
 
 -- --------------------------------------------------------
 
@@ -203,7 +233,37 @@ INSERT INTO `team_players` (`team_id`, `player_id`) VALUES
 (2, 2),
 (2, 3),
 (2, 4),
-(2, 5);
+(2, 5),
+(4, 14),
+(4, 11),
+(4, 12),
+(4, 13),
+(4, 15),
+(5, 20),
+(5, 19),
+(5, 18),
+(5, 17),
+(5, 16),
+(6, 25),
+(6, 24),
+(6, 23),
+(6, 22),
+(6, 21),
+(7, 30),
+(7, 29),
+(7, 28),
+(7, 27),
+(7, 26),
+(8, 35),
+(8, 34),
+(8, 33),
+(8, 32),
+(8, 31),
+(9, 40),
+(9, 39),
+(9, 38),
+(9, 37),
+(9, 36);
 
 -- --------------------------------------------------------
 
@@ -351,7 +411,7 @@ ALTER TABLE `match_results`
 -- AUTO_INCREMENT for table `players`
 --
 ALTER TABLE `players`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT for table `teams`
