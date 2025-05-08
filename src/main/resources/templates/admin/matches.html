@@ -29,6 +29,7 @@
                   <th>ID</th>
                   <th>Team 1</th>
                   <th>Team 2</th>
+                  <th>Winner</th>
                   <th>Tournament</th>
                   <th>Date</th>
                   <th>Actions</th>
@@ -39,6 +40,7 @@
                   <td th:text="${match.id}"></td>
                   <td th:text="${match.teamA.name}"></td>
                   <td th:text="${match.teamB.name}"></td>
+                  <td th:text="${match.result != null ? match.result.teamAScore + ' - ' + match.result.teamBScore : 'En attente'}"></td>
                   <td th:text="${match.tournament.name}"></td>
                   <td
                     th:text="${#dates.format(match.matchDate, 'dd-MM-yyyy')}"

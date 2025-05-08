@@ -52,7 +52,18 @@
                   ></option>
                 </select>
               </div>
-
+              <div class="form-group">
+                <label>Score de l'équipe A</label>
+                <input type="number" class="form-control" name="result.teamAScore" th:field="*{result.teamAScore}" />
+              </div>
+              <div class="form-group">
+                <label>Score de l'équipe B</label>
+                <input type="number" class="form-control" name="result.teamBScore" th:field="*{result.teamBScore}" />
+              </div>
+              <div class="form-group">
+                <label>Gagnant</label>
+                <input type="text" class="form-control" name="result.winner" th:field="*{result.winner}" />
+              </div>
               <div class="form-group">
                 <label>Match Date</label>
                 <input

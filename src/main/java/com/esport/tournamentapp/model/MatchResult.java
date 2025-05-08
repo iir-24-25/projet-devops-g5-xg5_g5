@@ -9,15 +9,19 @@ public class MatchResult {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    @Column(nullable = true)
     private int teamAScore;
+
+    @Column(nullable = true)
     private int teamBScore;
 
-    private String winner; // Could be team name
+    @ManyToOne
+    @JoinColumn(name = "winner_id", nullable = true)
+    private Team winner;
 
     public MatchResult() {}
 
-    public MatchResult(int teamAScore, int teamBScore, String winner) {
+    public MatchResult(int teamAScore, int teamBScore, Team winner) {
         this.teamAScore = teamAScore;
         this.teamBScore = teamBScore;
         this.winner = winner;
@@ -35,7 +39,7 @@ public class MatchResult {
         return teamBScore;
     }
 
-    public String getWinner() {
+    public Team getWinner() {
         return winner;
     }
 
@@ -51,7 +55,7 @@ public class MatchResult {
         this.teamBScore = teamBScore;
     }
 
-    public void setWinner(String winner) {
+    public void setWinner(Team winner) {
         this.winner = winner;
     }
 }

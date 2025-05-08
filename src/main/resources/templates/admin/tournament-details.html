@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="admin/layout :: head"></head>
+<body id="page-top">
+<div id="wrapper">
+    <div th:replace="admin/layout :: sidebar"></div>
+
+    <div id="content-wrapper" class="d-flex flex-column">
+        <div id="content">
+            <div th:replace="admin/layout :: topbar"></div>
+
+            <div class="container-fluid">
+                <h1 class="h3 mb-4 text-gray-800">Tournament Details</h1>
+
+                <div class="card mb-4">
+                    <div class="card-body d-flex align-items-center">
+                        <img th:src="@{${tournament.imageUrl}}" alt="Image tournoi" style="height: 120px; margin-right: 20px;" />
+                        <div>
+                            <h4 th:text="${tournament.name}">Tournament Name</h4>
+                            <p><strong>Game :</strong> <span th:text="${tournament.game.name}"></span></p>
+                            <p><strong>Date :</strong>
+                                <span th:text="${#dates.format(tournament.startDate, 'yyyy-MM-dd')}"></span>
+                                -
+                                <span th:text="${#dates.format(tournament.endDate, 'yyyy-MM-dd')}"></span>
+                            </p>
+                            <p><strong>Prize Pool :</strong> <span th:text="${tournament.prizePool} + ' $'"></span></p>
+                            <p><strong>Winner :</strong>
+                                <span th:text="${tournament.winner != null ? tournament.winner.name : 'Non défini'}"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <h5 class="mb-3">Matchs</h5>
+                <table class="table table-bordered table-hover">
+                    <thead class="thead-light">
+                    <tr>
+                        <th>Match</th>
+                        <th>Date</th>
+                        <th>Score</th>
+                        <th>Gagnant</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="match : ${tournament.matches}">
+                        <td>
+                            <span th:text="${match.teamA.name}"></span> vs
+                            <span th:text="${match.teamB.name}"></span>
+                        </td>
+                        <td th:text="${#dates.format(match.matchDate, 'yyyy-MM-dd')}"></td>
+                        <td th:text="${match.result != null ? match.result.teamAScore + ' - ' + match.result.teamBScore : 'N/A'}"></td>
+                        <td th:text="${
+                  match.result != null ?
+                  (match.result.teamAScore > match.result.teamBScore ? match.teamA.name :
+                   (match.result.teamBScore > match.result.teamAScore ? match.teamB.name : 'Égalité'))
+                  : 'N/A'
+              }"></td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <a th:href="@{/admin/tournaments}" class="btn btn-secondary mt-3">Retour</a>
+            </div>
+        </div>
+
+        <div th:replace="admin/layout :: footer"></div>
+    </div>
+</div>
+<div th:replace="admin/layout :: scripts"></div>
+</body>
+</html>

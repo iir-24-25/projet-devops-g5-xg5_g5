@@ -36,6 +36,7 @@
                   <th>Start Date</th>
                   <th>End Date</th>
                   <th>Prize Pool</th>
+                  <th>Winner</th>
                   <th>Actions</th>
                 </tr>
               </thead>
@@ -49,6 +50,7 @@
                 <td th:text="${t.startDate}"></td>
                 <td th:text="${t.endDate}"></td>
                 <td th:text="${t.prizePool} + ' $'"></td>
+                <td th:text="${t.winner != null ? t.winner.name : '—'}"></td>
                 <td>
                   <a th:href="@{/admin/tournaments/edit/{id}(id=${t.id})}" class="btn btn-sm btn-success">
                     <i class="fas fa-edit"></i> Edit
@@ -57,7 +59,12 @@
                      onclick="return confirm('Delete this tournament?')">
                     <i class="fas fa-trash"></i> Delete
                   </a>
+                  <a th:href="@{/admin/tournaments/details/{id}(id=${t.id})}" class="btn btn-sm btn-info">
+                    <i class="fas fa-eye"></i> Details
+                  </a>
+
                 </td>
+
               </tr>
 
               </tbody>

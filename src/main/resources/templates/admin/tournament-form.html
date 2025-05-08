@@ -34,12 +34,9 @@
               <div class="form-group">
                 <label>Game</label>
                 <select class="form-control" th:field="*{game}">
-                  <option
-                    th:each="g : ${allGames}"
-                    th:value="${g}"
-                    th:text="${g.name}"
-                  ></option>
+                  <option th:each="g : ${allGames}" th:value="${g.id}" th:text="${g.name}"></option>
                 </select>
+
               </div>
               <div class="form-group">
                 <label>Image</label>
@@ -76,6 +73,50 @@
                   required
                 />
               </div>
+
+              <h5 class="mt-4">Matchs du tournoi</h5>
+              <div th:each="match, iStat : *{matches}" class="border p-3 mb-3 rounded">
+                <div class="form-group">
+                  <label>Match [[${iStat.index + 1}]] - Équipe A</label>
+                  <select class="form-control" th:field="*{matches[__${iStat.index}__].teamA}">
+                    <option th:each="team : ${allTeams}" th:value="${team.id}" th:text="${team.name}"></option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Équipe B</label>
+                  <select class="form-control" th:field="*{matches[__${iStat.index}__].teamB}">
+                    <option th:each="team : ${allTeams}" th:value="${team.id}" th:text="${team.name}"></option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Date du Match</label>
+                  <input type="date" class="form-control" th:field="*{matches[__${iStat.index}__].matchDate}" />
+                </div>
+
+                <div class="form-group">
+                  <label>Score Équipe A</label>
+                  <input type="number" class="form-control" th:field="*{matches[__${iStat.index}__].result.teamAScore}" />
+                </div>
+                <div class="form-group">
+                  <label>Score Équipe B</label>
+                  <input type="number" class="form-control" th:field="*{matches[__${iStat.index}__].result.teamBScore}" />
+                </div>
+                <div class="form-group">
+                  <label>Gagnant</label>
+                  <select class="form-control" th:field="*{matches[__${iStat.index}__].result.winner}">
+                    <option value="">-- Non défini --</option>
+                    <option th:each="team : ${allTeams}" th:value="${team.id}" th:text="${team.name}"></option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Gagnant du tournoi (optionnel)</label>
+                <select class="form-control" th:field="*{winner}">
+                  <option value="">-- Aucun --</option>
+                  <option th:each="team : ${allTeams}" th:value="${team.id}" th:text="${team.name}"></option>
+                </select>
+              </div>
+
 
               <button type="submit" class="btn btn-primary">Save</button>
               <a th:href="@{/admin/tournaments}" class="btn btn-secondary"

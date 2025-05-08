@@ -23,11 +23,14 @@ public class Match {
     private Team teamB;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @Column(nullable = true ) // allows null in DB
     private Date matchDate;
 
 
     @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "match_result_id", referencedColumnName = "id" , nullable = true )
     private MatchResult result;
+
 
     public Match() {}
 

@@ -31,7 +31,7 @@ public class MatchViewController {
     public String listMatches(@RequestParam(required = false) Long tournamentId,
                               Model model) {
 
-        List<Match> matches;
+            List<Match> matches;
 
         if (tournamentId != null) {
             matches = matchRepository.findByTournamentId(tournamentId);

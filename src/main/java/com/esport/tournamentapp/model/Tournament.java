@@ -2,6 +2,8 @@ package com.esport.tournamentapp.model;
 
 import jakarta.persistence.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "tournaments")
@@ -14,12 +16,23 @@ public class Tournament {
     private String name;
     @ManyToOne
     @JoinColumn(name = "game_id")
+
+
     private Game game;
 
     private LocalDate startDate;
     private LocalDate endDate;
     private Double prizePool;
     private String imageUrl;
+
+
+
+    @OneToMany(mappedBy = "tournament", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Match> matches = new ArrayList<>();
+
+    @ManyToOne
+    private Team winner; // peut être null
+
 
 
     // Constructors
@@ -62,6 +75,14 @@ public class Tournament {
         return imageUrl;
     }
 
+    public List<Match> getMatches() {
+        return matches;
+    }
+
+    public Team getWinner() {
+        return winner;
+    }
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -87,4 +108,14 @@ public class Tournament {
     }
 
     public void setImageUrl(String imageUrl) { this.imageUrl = imageUrl; }
+
+    public void setMatches(List<Match> matches) {
+        this.matches = matches;
+    }
+
+    public void setWinner(Team winner) {
+        this.winner = winner;
+    }
 }
+
+
