@@ -1,13 +1,54 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="admin/layout :: head"></head>
+<head th:replace="~{admin/layout :: head}">
+
+</head>
+<style>
+    .bracket {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+    }
+
+    .round {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        gap: 20px;
+    }
+
+    .match {
+        background: #1f1f1f;
+        color: #fff;
+        padding: 10px 15px;
+        border-radius: 8px;
+        text-align: center;
+        min-width: 180px;
+    }
+
+    .final {
+        background: #28a745;
+        font-weight: bold;
+        box-shadow: 0 0 10px #28a745;
+    }
+
+    .champion-label {
+        text-align: center;
+        font-size: 1.3rem;
+        font-weight: bold;
+        color: #ffc107;
+        margin-top: 10px;
+    }
+</style>
 <body id="page-top">
 <div id="wrapper">
-    <div th:replace="admin/layout :: sidebar"></div>
+    <div th:replace="~{admin/layout :: sidebar}"></div>
 
     <div id="content-wrapper" class="d-flex flex-column">
         <div id="content">
-            <div th:replace="admin/layout :: topbar"></div>
+            <div th:replace="~{admin/layout :: topbar}"></div>
 
             <div class="container-fluid">
                 <h1 class="h3 mb-4 text-gray-800">Tournament Details</h1>
@@ -22,7 +63,7 @@
                                 <span th:text="${#temporals.format(tournament.startDate, 'yyyy-MM-dd')}"></span> -
                                 <span th:text="${#temporals.format(tournament.endDate, 'yyyy-MM-dd')}"></span>
                             </p>
-                            <p><strong>Prize Pool:</strong> <span th:text="${tournament.prizePool} + ' $'"></span></p>
+                            <p><strong>Prize Pool:</strong> <span th:text="${tournament.prizePool + ' $'}"></span></p>
                             <p><strong>Winner:</strong>
                                 <span th:if="${tournament.winner != null}" th:text="${tournament.winner.name}"></span>
                                 <span th:if="${tournament.winner == null}">Non défini</span>
@@ -31,46 +72,36 @@
                     </div>
                 </div>
 
-                <h5 class="mb-3">Matchs</h5>
-                <table class="table table-bordered table-hover">
-                    <thead class="thead-light">
-                    <tr>
-                        <th>Match</th>
-                        <th>Date</th>
-                        <th>Score</th>
-                        <th>Gagnant</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr th:each="match : ${tournament.matches}">
-                        <td>
-                            <span th:text="${match.teamA.name}"></span> vs
-                            <span th:text="${match.teamB.name}"></span>
-                        </td>
-                        <td th:text="${#temporals.format(match.matchDate, 'yyyy-MM-dd')}"></td>
-                        <td>
-                            <span th:if="${match.result != null}" th:text="${match.result.teamAScore + ' - ' + match.result.teamBScore}"></span>
-                            <span th:unless="${match.result != null}">N/A</span>
-                        </td>
-                        <td>
-                            <span th:if="${match.result != null}">
-                                <span th:if="${match.result.teamAScore > match.result.teamBScore}" th:text="${match.teamA.name}"></span>
-                                <span th:if="${match.result.teamBScore > match.result.teamAScore}" th:text="${match.teamB.name}"></span>
-                                <span th:if="${match.result.teamBScore == match.result.teamAScore}">Égalité</span>
-                            </span>
-                            <span th:unless="${match.result != null}">N/A</span>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
+                <h5 class="mb-3">Bracket</h5>
+                <div class="bracket">
+                    <div class="round">
+                        <h6 style="color:darkslategrey;text-align:center;">Quarterfinals</h6>
+                        <div class="match" th:text="${tournament.matches[0].teamA.name + ' vs ' + tournament.matches[0].teamB.name + ' : ' + tournament.matches[0].result.teamAScore + ' - ' + tournament.matches[0].result.teamBScore}"></div>
+                        <div class="match" th:text="${tournament.matches[1].teamA.name + ' vs ' + tournament.matches[1].teamB.name + ' : ' + tournament.matches[1].result.teamAScore + ' - ' + tournament.matches[1].result.teamBScore}"></div>
+                        <div class="match" th:text="${tournament.matches[2].teamA.name + ' vs ' + tournament.matches[2].teamB.name + ' : ' + tournament.matches[2].result.teamAScore + ' - ' + tournament.matches[2].result.teamBScore}"></div>
+                        <div class="match" th:text="${tournament.matches[3].teamA.name + ' vs ' + tournament.matches[3].teamB.name + ' : ' + tournament.matches[3].result.teamAScore + ' - ' + tournament.matches[3].result.teamBScore}"></div>
+                    </div>
+                    <div class="round">
+                        <h6 style="color:darkslategrey;text-align:center;">Semifinals</h6>
+                        <div class="match" th:if="${tournament.matches[4] != null}" th:text="${tournament.matches[4].teamA.name + ' vs ' + tournament.matches[4].teamB.name + ' : ' + tournament.matches[4].result.teamAScore + ' - ' + tournament.matches[4].result.teamBScore}"></div>
+                        <div class="match" th:if="${tournament.matches[5] != null}" th:text="${tournament.matches[5].teamA.name + ' vs ' + tournament.matches[5].teamB.name + ' : ' + tournament.matches[5].result.teamAScore + ' - ' + tournament.matches[5].result.teamBScore}"></div>
+                    </div>
+                    <div class="round">
+                        <h6 style="color:darkslategrey;text-align:center;">Final</h6>
+                        <div class="match final" th:if="${tournament.matches[6] != null}" th:text="${tournament.matches[6].teamA.name + ' vs ' + tournament.matches[6].teamB.name + ' : ' + tournament.matches[6].result.teamAScore + ' - ' + tournament.matches[6].result.teamBScore}"></div>
+                        <div class="champion-label" th:if="${tournament.winner != null}">
+                            🏆 <span th:text="${tournament.winner.name}">Champion</span>
+                        </div>
+                    </div>
+                </div>
 
-                <a th:href="@{/admin/tournaments}" class="btn btn-secondary mt-3">Retour</a>
+                <a th:href="@{/admin/tournaments}" class="btn btn-secondary mt-3">Back to Tournaments</a>
             </div>
         </div>
 
-        <div th:replace="admin/layout :: footer"></div>
+        <div th:replace="~{admin/layout :: footer}"></div>
     </div>
 </div>
-<div th:replace="admin/layout :: scripts"></div>
+<div th:replace="~{admin/layout :: scripts}"></div>
 </body>
 </html>
