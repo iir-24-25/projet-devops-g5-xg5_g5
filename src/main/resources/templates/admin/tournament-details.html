@@ -14,18 +14,18 @@
 
                 <div class="card mb-4">
                     <div class="card-body d-flex align-items-center">
-                        <img th:src="@{${tournament.imageUrl}}" alt="Image tournoi" style="height: 120px; margin-right: 20px;" />
+                        <img th:src="@{${tournament.imageUrl}}" alt="Tournament Image" style="height: 120px; margin-right: 20px;" />
                         <div>
                             <h4 th:text="${tournament.name}">Tournament Name</h4>
-                            <p><strong>Game :</strong> <span th:text="${tournament.game.name}"></span></p>
-                            <p><strong>Date :</strong>
-                                <span th:text="${#dates.format(tournament.startDate, 'yyyy-MM-dd')}"></span>
-                                -
-                                <span th:text="${#dates.format(tournament.endDate, 'yyyy-MM-dd')}"></span>
+                            <p><strong>Game:</strong> <span th:text="${tournament.game.name}"></span></p>
+                            <p><strong>Date:</strong>
+                                <span th:text="${#temporals.format(tournament.startDate, 'yyyy-MM-dd')}"></span> -
+                                <span th:text="${#temporals.format(tournament.endDate, 'yyyy-MM-dd')}"></span>
                             </p>
-                            <p><strong>Prize Pool :</strong> <span th:text="${tournament.prizePool} + ' $'"></span></p>
-                            <p><strong>Winner :</strong>
-                                <span th:text="${tournament.winner != null ? tournament.winner.name : 'Non défini'}"></span>
+                            <p><strong>Prize Pool:</strong> <span th:text="${tournament.prizePool} + ' $'"></span></p>
+                            <p><strong>Winner:</strong>
+                                <span th:if="${tournament.winner != null}" th:text="${tournament.winner.name}"></span>
+                                <span th:if="${tournament.winner == null}">Non défini</span>
                             </p>
                         </div>
                     </div>
@@ -47,14 +47,19 @@
                             <span th:text="${match.teamA.name}"></span> vs
                             <span th:text="${match.teamB.name}"></span>
                         </td>
-                        <td th:text="${#dates.format(match.matchDate, 'yyyy-MM-dd')}"></td>
-                        <td th:text="${match.result != null ? match.result.teamAScore + ' - ' + match.result.teamBScore : 'N/A'}"></td>
-                        <td th:text="${
-                  match.result != null ?
-                  (match.result.teamAScore > match.result.teamBScore ? match.teamA.name :
-                   (match.result.teamBScore > match.result.teamAScore ? match.teamB.name : 'Égalité'))
-                  : 'N/A'
-              }"></td>
+                        <td th:text="${#temporals.format(match.matchDate, 'yyyy-MM-dd')}"></td>
+                        <td>
+                            <span th:if="${match.result != null}" th:text="${match.result.teamAScore + ' - ' + match.result.teamBScore}"></span>
+                            <span th:unless="${match.result != null}">N/A</span>
+                        </td>
+                        <td>
+                            <span th:if="${match.result != null}">
+                                <span th:if="${match.result.teamAScore > match.result.teamBScore}" th:text="${match.teamA.name}"></span>
+                                <span th:if="${match.result.teamBScore > match.result.teamAScore}" th:text="${match.teamB.name}"></span>
+                                <span th:if="${match.result.teamBScore == match.result.teamAScore}">Égalité</span>
+                            </span>
+                            <span th:unless="${match.result != null}">N/A</span>
+                        </td>
                     </tr>
                     </tbody>
                 </table>
