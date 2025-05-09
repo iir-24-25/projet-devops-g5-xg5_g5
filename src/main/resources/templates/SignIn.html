@@ -1,82 +1,160 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html class="no-js" lang="">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Se connecter</title>
-    <style>
-      body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        background: linear-gradient(to right, #040a83 30%, #0e0e0e);
-        font-family: "Work Sans", sans-serif;
-      }
-
-      form {
-        border: 3px solid #4e5ec6;
-        color: #fff;
-        padding: 6em 2em;
-        width: 100%;
-        max-width: 575px;
-      }
-
-      .input-field {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin: 1em 0;
-      }
-
-      .input-field input {
-        padding: 0.6em 0.5em;
-        min-width: 250px;
-      }
-
-      button {
-        margin-top: 2em;
-        background-color: #0e0e0e;
-        border: none;
-        padding: 1em;
-        color: #fff;
-        cursor: pointer;
-        transition: 300ms background-color ease;
-        width: 100%;
-      }
-
-      button:hover {
-        background-color: black;
-      }
-
-      .retour {
-        display: block;
-        margin-top: 1em;
-        color: #a32929;
-        text-align: center;
-        text-decoration: none;
-      }
-    </style>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>eTournement Manager | Sign In</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" th:href="@{/img/1.0.png}" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" th:href="@{/css/fontawesome-all.min.css}" />
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" th:href="@{/font/flaticon.css}" />
+    <!-- Google Web Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" th:href="@{css/style.css}" />
   </head>
+
   <body>
-    <div class="logo">
-      <img th:src="@{/assets/img/3.0.png}" alt="logo" />
+    <div id="preloader" class="preloader">
+      <div class="inner">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
     </div>
-
-    <form th:action="@{/signin}" method="post">
-      <div class="input-field">
-        <label for="email">Email :</label>
-        <input type="email" id="email" name="email" required />
+    <section class="fxt-template-animation fxt-template-layout1">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-8 col-12 fxt-bg-color">
+            <div class="fxt-content">
+              <div class="d-flex flex-column align-items-center">
+                <a th:href="@{/signin}" class="fxt-logo">
+                  <img
+                    th:src="@{/img/1.0.png}"
+                    width="200px"
+                    height="200px"
+                    alt="Logo"
+                  />
+                </a>
+                <div class="fxt-header">
+                  <div class="fxt-page-switcher">
+                    <a th:href="@{/signin}" class="switcher-text1 active"
+                      >Log In</a
+                    >
+                    <a th:href="@{/signup}" class="switcher-text1">Register</a>
+                  </div>
+                </div>
+              </div>
+              <div class="fxt-form">
+                <div class="d-flex flex-column align-items-center">
+                  <h2>Log In</h2>
+                  <p>Log in to continue in our website</p>
+                </div>
+                <form method="POST" th:action="@{/signin}">
+                  <div class="form-group">
+                    <div class="fxt-transformY-50 fxt-transition-delay-1">
+                      <input
+                        type="text"
+                        class="form-control form-control-user"
+                        name="email"
+                        placeholder="Enter Email..."
+                        required
+                      />
+                      <i class="flaticon-envelope"></i>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="fxt-transformY-50 fxt-transition-delay-2">
+                      <input
+                        type="password"
+                        class="form-control"
+                        name="password"
+                        placeholder="Password"
+                        required="required"
+                      />
+                      <i class="flaticon-padlock"></i>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="fxt-transformY-50 fxt-transition-delay-3">
+                      <div class="fxt-content-between">
+                        <button type="submit" class="fxt-btn-fill">
+                          Log in
+                        </button>
+                        <a href="#" class="switcher-text2">Forgot Password</a>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="fxt-footer">
+                <ul class="fxt-socials">
+                  <li
+                    class="fxt-facebook fxt-transformY-50 fxt-transition-delay-4"
+                  >
+                    <a href="#" title="Facebook"
+                      ><i class="fab fa-facebook-f"></i
+                    ></a>
+                  </li>
+                  <li
+                    class="fxt-twitter fxt-transformY-50 fxt-transition-delay-5"
+                  >
+                    <a href="#" title="twitter"
+                      ><i class="fab fa-twitter"></i
+                    ></a>
+                  </li>
+                  <li
+                    class="fxt-google fxt-transformY-50 fxt-transition-delay-6"
+                  >
+                    <a href="#" title="google"
+                      ><i class="fab fa-google-plus-g"></i
+                    ></a>
+                  </li>
+                  <li
+                    class="fxt-linkedin fxt-transformY-50 fxt-transition-delay-7"
+                  >
+                    <a href="#" title="linkedin"
+                      ><i class="fab fa-linkedin-in"></i
+                    ></a>
+                  </li>
+                  <li
+                    class="fxt-pinterest fxt-transformY-50 fxt-transition-delay-8"
+                  >
+                    <a href="#" title="pinterest"
+                      ><i class="fab fa-pinterest-p"></i
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-4 col-12 fxt-none-767 fxt-bg-img"
+            style="background-image: url('/img/about-2-3.png')"
+          ></div>
+        </div>
       </div>
-      <div class="input-field">
-        <label for="password">Mot de passe :</label>
-        <input type="password" id="password" name="password" required />
-      </div>
-      <button type="submit">Se connecter</button>
-    </form>
-    <p th:if="${error}" th:text="${error}" style="color: red"></p>
-
-    <a th:href="@{/signup}" class="retour">Créer un compte</a>
+    </section>
+    <!-- jquery-->
+    <script th:src="@{/js/jquery.min.js}"></script>
+    <!-- Bootstrap js -->
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+    <!-- Imagesloaded js -->
+    <script th:src="@{/js/imagesloaded.pkgd.min.js}"></script>
+    <!-- Validator js -->
+    <script th:src="@{/js/validator.min.js}"></script>
+    <!-- Custom Js -->
+    <script th:src="@{/js/main.js}"></script>
   </body>
+
+  <!-- Mirrored from affixtheme.com/html/xmee/demo@{/signin}-1.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 May 2025 07:53:24 GMT -->
 </html>
