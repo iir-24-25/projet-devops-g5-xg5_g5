@@ -36431,8 +36431,8 @@ h6,
 .btn.btn-primary.show,
 .show > .btn.btn-primary {
   color: #fff;
-  border-color: var(--bs-primary-active);
-  background-color: var(--bs-primary-active) !important;
+  border-color: #000000;
+  background-color: #000000 !important;
 }
 .btn-check:checked + .btn.btn-primary i,
 .btn-check:checked + .btn.btn-primary .svg-icon,
