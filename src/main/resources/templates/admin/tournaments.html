@@ -13,18 +13,28 @@
               ><i class="fas fa-plus"></i> Add Tournament</a
             >
             <form method="get" class="form-inline mb-3">
-              <input type="text" name="name" class="form-control mr-2" placeholder="Search by name"
-                     th:value="${name}">
+              <input
+                type="text"
+                name="name"
+                class="form-control mr-2"
+                placeholder="Search by name"
+                th:value="${name}"
+              />
 
               <select name="gameId" class="form-control mr-2">
                 <option value="">All Games</option>
-                <option th:each="g : ${games}" th:value="${g.id}" th:text="${g.name}"
-                        th:selected="${g.id} == ${gameId}"></option>
+                <option
+                  th:each="g : ${games}"
+                  th:value="${g.id}"
+                  th:text="${g.name}"
+                  th:selected="${g.id} == ${gameId}"
+                ></option>
               </select>
 
               <button type="submit" class="btn btn-primary">Filter</button>
-              <a th:href="@{/admin/tournaments}" class="btn btn-secondary ml-2">Reset</a>
-
+              <a th:href="@{/admin/tournaments}" class="btn btn-secondary ml-2"
+                >Reset</a
+              >
             </form>
 
             <table class="table table-bordered">
@@ -41,32 +51,43 @@
                 </tr>
               </thead>
               <tbody>
-              <tr th:each="t : ${tournaments}">
-                <td th:text="${t.name}"></td>
-                <td>
-                  <img th:if="${t.imageUrl}" th:src="@{${t.imageUrl}}" style="height: 60px;" alt="Tournament Image" />
-                </td>
-                <td th:text="${t.game.name}"></td>
-                <td th:text="${t.startDate}"></td>
-                <td th:text="${t.endDate}"></td>
-                <td th:text="${t.prizePool} + ' $'"></td>
-                <td th:text="${t.winner != null ? t.winner.name : '—'}"></td>
-                <td>
-                  <a th:href="@{/admin/tournaments/edit/{id}(id=${t.id})}" class="btn btn-sm btn-success">
-                    <i class="fas fa-edit"></i> Edit
-                  </a>
-                  <a th:href="@{/admin/tournaments/delete/{id}(id=${t.id})}" class="btn btn-sm btn-danger"
-                     onclick="return confirm('Delete this tournament?')">
-                    <i class="fas fa-trash"></i> Delete
-                  </a>
-                  <a th:href="@{/admin/tournaments/details/{id}(id=${t.id})}" class="btn btn-sm btn-info">
-                    <i class="fas fa-eye"></i> Details
-                  </a>
-
-                </td>
-
-              </tr>
-
+                <tr th:each="t : ${tournaments}">
+                  <td th:text="${t.name}"></td>
+                  <td class="text-center">
+                    <img
+                      th:if="${t.imageUrl}"
+                      th:src="@{${t.imageUrl}}"
+                      style="height: 60px"
+                      alt="Tournament Image"
+                    />
+                  </td>
+                  <td th:text="${t.game.name}"></td>
+                  <td th:text="${t.startDate}"></td>
+                  <td th:text="${t.endDate}"></td>
+                  <td th:text="${t.prizePool} + ' $'"></td>
+                  <td th:text="${t.winner != null ? t.winner.name : '—'}"></td>
+                  <td>
+                    <a
+                      th:href="@{/admin/tournaments/edit/{id}(id=${t.id})}"
+                      class="btn btn-sm btn-success"
+                    >
+                      <i class="fas fa-edit"></i> Edit
+                    </a>
+                    <a
+                      th:href="@{/admin/tournaments/delete/{id}(id=${t.id})}"
+                      class="btn btn-sm btn-danger"
+                      onclick="return confirm('Delete this tournament?')"
+                    >
+                      <i class="fas fa-trash"></i> Delete
+                    </a>
+                    <a
+                      th:href="@{/admin/tournaments/details/{id}(id=${t.id})}"
+                      class="btn btn-sm btn-info"
+                    >
+                      <i class="fas fa-eye"></i> Details
+                    </a>
+                  </td>
+                </tr>
               </tbody>
             </table>
           </div>

@@ -1,6 +1,6 @@
 package com.esport.tournamentapp.config;
 
-import com.esport.tournamentapp.config.AdminInterceptor;
+// import com.esport.tournamentapp.config.AdminInterceptor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.*;
 

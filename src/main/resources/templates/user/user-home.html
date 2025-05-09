@@ -1,344 +1,419 @@
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
-<!-- Mirrored from html.vecurosoft.com/playrex/dark/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 19 Apr 2025 16:31:23 GMT -->
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="x-ua-compatible" content="ie=edge" />
-  <title>ETournament Manager - Home</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" />
-  <meta name="description" content="eTournament User Portal" />
-  <meta name="keywords" content="esports, gaming, tournaments" />
-  <meta name="robots" content="INDEX,FOLLOW" />
+  <!-- Mirrored from html.vecurosoft.com/playrex/dark/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 19 Apr 2025 16:31:23 GMT -->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>ETournament Manager - Home</title>
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,shrink-to-fit=no"
+    />
+    <meta name="description" content="eTournament User Portal" />
+    <meta name="keywords" content="esports, gaming, tournaments" />
+    <meta name="robots" content="INDEX,FOLLOW" />
 
-  <link rel="shortcut icon" th:href="@{/assets/img/1.0.png}" type="image/x-icon" />
-  <link rel="icon" th:href="@{/assets/img/1.0.png}" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      th:href="@{/assets/img/1.0.png}"
+      type="image/x-icon"
+    />
+    <link rel="icon" th:href="@{/assets/img/1.0.png}" type="image/x-icon" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com/" />
-  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com/" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="stylesheet" th:href="@{/assets/css/app.min.css}" />
-  <link rel="stylesheet" th:href="@{/assets/css/fontawesome.min.css}" />
-  <link rel="stylesheet" th:href="@{/assets/css/style.css}" />
-</head>
+    <link rel="stylesheet" th:href="@{/assets/css/app.min.css}" />
+    <link rel="stylesheet" th:href="@{/assets/css/fontawesome.min.css}" />
+    <link rel="stylesheet" th:href="@{/assets/css/style.css}" />
+  </head>
 
-<body class="dark-mode">
-
-<div class="preloader">
-  <button class="vs-btn preloaderCls">Cancel Preloader</button>
-  <div class="preloader-inner">
-    <div class="loader-logo">
-      <img th:src="@{/assets/img/2.0.png}" alt="logo"> </div>
-    <div class="spinner"></div>
-  </div>
-</div>
-
-<svg class="svg-hidden">
-  <clipPath id="body-clip1" clipPathUnits="objectBoundingBox">
-    <path d="M1,0 L0.755,0.202 L0.806,0.506 L0,1 L0.999,1"></path>
-  </clipPath>
-</svg>
-<div class="vs-menu-wrapper">
-  <div class="vs-menu-area text-center">
-    <button class="vs-menu-toggle">
-      <i class="fal fa-times"></i>
-    </button>
-    <div class="mobile-logo">
-      <a th:href="@{/index}"><img src="@{/assets/img/1.0.png}" alt="logo" /></a>
+  <body class="dark-mode">
+    <div class="preloader">
+      <div class="preloader-inner">
+        <div class="loader-logo">
+          <img th:src="@{/assets/img/2.0.png}" alt="logo" />
+        </div>
+        <div class="spinner"></div>
+      </div>
     </div>
-    <div class="vs-mobile-menu">
-      <ul>
-        <li><a th:href="@{/index}">Acceuil</a></li>
-        <li><a th:href="@{/tournament/details}">Tournois</a></li>
-        <li><a th:href="@{/teams}">Equipe</a></li>
-        <li><a href="about.html">Classements</a></li>
-        <li class="menu-item-has-children">
-          <a href="match.html">Matches</a>
-          <ul class="sub-menu">
-            <li><a href="match.html">Matches</a></li>
-            <li><a href="match-details.html">Match Details</a>l;</li>
+
+    <svg class="svg-hidden">
+      <clipPath id="body-clip1" clipPathUnits="objectBoundingBox">
+        <path d="M1,0 L0.755,0.202 L0.806,0.506 L0,1 L0.999,1"></path>
+      </clipPath>
+    </svg>
+    <div class="vs-menu-wrapper">
+      <div class="vs-menu-area text-center">
+        <button class="vs-menu-toggle">
+          <i class="fal fa-times"></i>
+        </button>
+        <div class="mobile-logo">
+          <a th:href="@{/index}"
+            ><img src="@{/assets/img/1.0.png}" alt="logo"
+          /></a>
+        </div>
+        <div class="vs-mobile-menu">
+          <ul>
+            <li><a th:href="@{/index}">Acceuil</a></li>
+            <li><a th:href="@{/tournament/details}">Tournois</a></li>
+            <li><a th:href="@{/teams}">Equipe</a></li>
+            <li><a href="about.html">Classements</a></li>
+            <li class="menu-item-has-children">
+              <a href="match.html">Matches</a>
+              <ul class="sub-menu">
+                <li><a href="match.html">Matches</a></li>
+                <li><a href="match-details.html">Match Details</a></li>
+              </ul>
+            </li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
-        </li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-  </div>
-</div>
-<div class="sidemenu-wrapper d-none d-lg-block">
-  <div class="sidemenu-content">
-    <button class="closeButton sideMenuCls">
-      <i class="far fa-times"></i>
-    </button>
-    <div class="widget">
-      <div class="vs-widget-about">
-        <div class="footer-logo">
-          <a th:href="@{/index}">
-            <img src="assets/img/1.0.png" alt="logo"
-            /></a>
-        </div>
-        <p class="footer-text">
-          E-sport Arena — Simplifiez l'organisation de vos tournois e-sport.
-          Inscriptions rapides, matchs en direct, classements mis à jour en
-          temps réel. Rejoignez la communauté dès aujourd'hui !
-        </p>
-        <div class="footer-social">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
         </div>
       </div>
     </div>
-    <div class="widget">
-      <h3 class="widget_title">Get In Touch</h3>
-      <div>
-        <div class="footer-media">
-          <div class="media-icon">
-            <i class="fas fa-map-marker-alt"></i>
-          </div>
-          <div class="media-body">
-            <p class="media-info">
-              60313, Opernplatz 8, Frankfurt<br />Am Main, Hesse
+    <div class="sidemenu-wrapper d-none d-lg-block">
+      <div class="sidemenu-content">
+        <button class="closeButton sideMenuCls">
+          <i class="far fa-times"></i>
+        </button>
+        <div class="widget">
+          <div class="vs-widget-about">
+            <div class="footer-logo">
+              <a th:href="@{/index}">
+                <img src="assets/img/1.0.png" alt="logo"
+              /></a>
+            </div>
+            <p class="footer-text">
+              E-sport Arena — Simplifiez l'organisation de vos tournois e-sport.
+              Inscriptions rapides, matchs en direct, classements mis à jour en
+              temps réel. Rejoignez la communauté dès aujourd'hui !
             </p>
+            <div class="footer-social">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
           </div>
         </div>
-        <div class="footer-media">
-          <div class="media-icon"><i class="fas fa-phone-alt"></i></div>
-          <div class="media-body">
-            <span class="media-title">Phone No:</span>
-            <p class="media-info">
-              <a href="tel:+18004563711" class="text-inherit"
-              >+212 656 37 11</a
-              >
-            </p>
+        <div class="widget">
+          <h3 class="widget_title">Get In Touch</h3>
+          <div>
+            <div class="footer-media">
+              <div class="media-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="media-body">
+                <p class="media-info">
+                  60313, Opernplatz 8, Frankfurt<br />Am Main, Hesse
+                </p>
+              </div>
+            </div>
+            <div class="footer-media">
+              <div class="media-icon"><i class="fas fa-phone-alt"></i></div>
+              <div class="media-body">
+                <span class="media-title">Phone No:</span>
+                <p class="media-info">
+                  <a href="tel:+18004563711" class="text-inherit"
+                    >+212 656 37 11</a
+                  >
+                </p>
+              </div>
+            </div>
+            <div class="footer-media">
+              <div class="media-icon">
+                <i class="far fa-envelope"></i>
+              </div>
+              <div class="media-body">
+                <span class="media-title">Email Address:</span>
+                <p class="media-info">
+                  <a href="tel:+18004563711" class="text-inherit"
+                    >support@promo-theme.com</a
+                  >
+                </p>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="footer-media">
-          <div class="media-icon">
-            <i class="far fa-envelope"></i>
-          </div>
-          <div class="media-body">
-            <span class="media-title">Email Address:</span>
-            <p class="media-info">
-              <a href="tel:+18004563711" class="text-inherit"
-              >support@promo-theme.com</a
-              >
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="widget">
-      <div class="sidebar-gallery">
-        <div class="gallery-thumb">
-          <img
-                  src="assets/img/widget/1.png"
-                  alt="Gallery Image"
-                  class="w-100"
-          />
-          <a href="assets/img/widget/1.png" class="popup-image gal-btn">
-            <i class="fab fa-instagram"></i
-            ></a>
-        </div>
-        <div class="gallery-thumb">
-          <img
-                  src="assets/img/widget/2.png"
-                  alt="Gallery Image"
-                  class="w-100"
-          />
-          <a href="assets/img/widget/2.png">
-            <i class="fab fa-instagram"></i
-            ></a>
-        </div>
-        <div class="gallery-thumb">
-          <img
-                  src="assets/img/widget/3.png"
-                  alt="Gallery Image"
-                  class="w-100"
-          />
-          <a href="assets/img/widget/3.png" class="popup-image gal-btn">
-            <i class="fab fa-instagram"></i>
-          </a>
-        </div>
-        <div class="gallery-thumb">
-          <img
-                  src="assets/img/widget/4.png"
-                  alt="Gallery Image"
-                  class="w-100"
-          />
-          <a href="assets/img/widget/4.png" class="popup-image gal-btn">
-            <i class="fab fa-instagram"></i>
-          </a>
-        </div>
-        <div class="gallery-thumb">
-          <img
-                  src="assets/img/widget/5.png"
-                  alt="Gallery Image"
-                  class="w-100"
-          />
-          <a href="assets/img/widget/5.png" class="popup-image gal-btn">
-            <i class="fab fa-instagram"></i>
-          </a>
-        </div>
-        <div class="gallery-thumb">
-          <img
-                  src="assets/img/widget/free.png"
-                  alt="Gallery Image"
-                  class="w-100"
-          />
-          <a href="assets/img/widget/free.png" class="popup-image gal-btn">
-            <i class="fab fa-instagram"> </i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<header class="vs-header header-layout2">
-  <div class="header-top">
-    <div class="container">
-      <div class="row align-items-center text-center text-lg-start">
-        <div class="col d-none d-lg-block">
-          <p class="header-top-text">Bienvenue dans e-sport gaming</p>
-        </div>
-        <div class="col-lg-auto">
-          <div class="header-links style2">
-            <ul>
-              <li>
-                <i class="fas fa-phone-alt"></i> Phone:
-                <a href="tel:+02073885619">06 7388 5619</a>
-              </li>
-              <li>
-                <i class="fas fa-envelope"></i> Email:<a
-                      href="mailto:contact@example.com"
-              >contact@example.com</a
-              >
-              </li>
-            </ul>
+        <div class="widget">
+          <div class="sidebar-gallery">
+            <div class="gallery-thumb">
+              <img
+                src="assets/img/widget/1.png"
+                alt="Gallery Image"
+                class="w-100"
+              />
+              <a href="assets/img/widget/1.png" class="popup-image gal-btn">
+                <i class="fab fa-instagram"></i
+              ></a>
+            </div>
+            <div class="gallery-thumb">
+              <img
+                src="assets/img/widget/2.png"
+                alt="Gallery Image"
+                class="w-100"
+              />
+              <a href="assets/img/widget/2.png">
+                <i class="fab fa-instagram"></i
+              ></a>
+            </div>
+            <div class="gallery-thumb">
+              <img
+                src="assets/img/widget/3.png"
+                alt="Gallery Image"
+                class="w-100"
+              />
+              <a href="assets/img/widget/3.png" class="popup-image gal-btn">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+            <div class="gallery-thumb">
+              <img
+                src="assets/img/widget/4.png"
+                alt="Gallery Image"
+                class="w-100"
+              />
+              <a href="assets/img/widget/4.png" class="popup-image gal-btn">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+            <div class="gallery-thumb">
+              <img
+                src="assets/img/widget/5.png"
+                alt="Gallery Image"
+                class="w-100"
+              />
+              <a href="assets/img/widget/5.png" class="popup-image gal-btn">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+            <div class="gallery-thumb">
+              <img
+                src="assets/img/widget/free.png"
+                alt="Gallery Image"
+                class="w-100"
+              />
+              <a href="assets/img/widget/free.png" class="popup-image gal-btn">
+                <i class="fab fa-instagram"> </i>
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="sticky-wrapper">
-    <div class="sticky-active">
-      <div class="menu-area">
-        <div class="header-shape1"></div>
+    <header class="vs-header header-layout2">
+      <div class="header-top">
         <div class="container">
-          <div class="row align-items-center justify-content-between">
-            <div class="col-auto">
-              <div class="header-logo">
-                <a th:href="@{/index}">
-                  <img src="assets/img/1.0.png" alt="logo" width="150"
-                  /></a>
-              </div>
+          <div class="row align-items-center text-center text-lg-start">
+            <div class="col d-none d-lg-block">
+              <p class="header-top-text">Bienvenue dans e-sport gaming</p>
             </div>
-            <div class="col text-end text-xl-center">
-              <nav class="main-menu menu-style1 d-none d-lg-block">
+            <div class="col-lg-auto">
+              <div class="header-links style2">
                 <ul>
-                  <li><a th:href="@{/index}">Acceuil</a></li>
-                  <li><a th:href="@{/tournament/details}">Tournois</a></li>
-                  <li><a th:href="@{/teams}">Equipe</a></li>
-
-                  <li><a href="about.html">Classements</a></li>
-                  <li class="menu-item-has-children">
-                    <a href="match.html">Matches</a>
-                    <ul class="sub-menu">
-                      <li><a href="match.html">Matches</a></li>
-                      <li>
-                        <a href="match-details.html">Match Details</a>l;
-                      </li>
-                    </ul>
+                  <li>
+                    <i class="fas fa-phone-alt"></i> Phone:
+                    <a href="tel:+02073885619">06 7388 5619</a>
                   </li>
-                  <li><a href="contact.html">Contact</a></li>
+                  <li>
+                    <i class="fas fa-envelope"></i> Email:<a
+                      href="mailto:contact@example.com"
+                      >contact@example.com</a
+                    >
+                  </li>
                 </ul>
-              </nav>
-              <button class="vs-menu-toggle d-inline-block d-lg-none">
-                <i class="fal fa-bars"></i>
-              </button>
-            </div>
-            <div class="col-auto d-none d-xl-block">
-              <div class="header-icons style2">
-                <a href="cart.html" class="cart-icon"
-                ><i class="far fa-shopping-bag"></i
-                ></a>
-                <button class="sideMenuToggler">
-                  <i class="fal fa-bars"></i>
-                </button>
               </div>
             </div>
-            <div class="col-auto d-none d-xxl-block">
-              <a href="match-details.html" class="vs-btn">Login</a>
+          </div>
+        </div>
+      </div>
+      <div class="sticky-wrapper">
+        <div class="sticky-active">
+          <div class="menu-area">
+            <div class="header-shape1"></div>
+            <div class="container">
+              <div class="row align-items-center justify-content-between">
+                <div class="col-auto">
+                  <div class="header-logo">
+                    <a th:href="@{/index}">
+                      <img src="assets/img/1.0.png" alt="logo" width="150"
+                    /></a>
+                  </div>
+                </div>
+                <div class="col text-end text-xl-center">
+                  <nav class="main-menu menu-style1 d-none d-lg-block">
+                    <ul>
+                      <li><a th:href="@{/index}">Acceuil</a></li>
+                      <li><a th:href="@{/tournament/details}">Tournois</a></li>
+                      <li><a th:href="@{/teams}">Equipe</a></li>
+
+                      <li><a href="about.html">Classements</a></li>
+                      <li class="menu-item-has-children">
+                        <a href="match.html">Matches</a>
+                        <ul class="sub-menu">
+                          <li><a href="match.html">Matches</a></li>
+                          <li>
+                            <a href="match-details.html">Match Details</a>l;
+                          </li>
+                        </ul>
+                      </li>
+                      <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                  </nav>
+                  <button class="vs-menu-toggle d-inline-block d-lg-none">
+                    <i class="fal fa-bars"></i>
+                  </button>
+                </div>
+                <div class="col-auto d-none d-xl-block">
+                  <div class="header-icons style2">
+                    <a href="cart.html" class="cart-icon"
+                      ><i class="far fa-shopping-bag"></i
+                    ></a>
+                    <button class="sideMenuToggler">
+                      <i class="fal fa-bars"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="col-auto d-none d-xxl-block">
+                  <a href="match-details.html" class="vs-btn">Login</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</header>
+    </header>
 
+    <div data-bg-src="assets/img/bg/body-bg-1-2.jpg">
+      <section class="space-top space-extra-bottom">
+        <div class="container">
+          <div
+            class="title-area text-center wow fadeInUp"
+            data-wow-delay="0.3s"
+          >
+            <span class="sec-subtitle">Joueurs Pro</span>
+            <h2 class="sec-title">Rencontrez les membres de l'équipe</h2>
+            <div class="sec-line"></div>
+          </div>
 
-<div data-bg-src="assets/img/bg/body-bg-1-2.jpg">
-  <section class="space-top space-extra-bottom">
-    <div class="container">
-      <div class="title-area text-center wow fadeInUp" data-wow-delay="0.3s">
-        <span class="sec-subtitle">Joueurs Pro</span>
-        <h2 class="sec-title">Rencontrez les membres de l'équipe</h2>
-        <div class="sec-line"></div>
-      </div>
+          <div
+            class="row team-nav1 vs-carousel wow fadeInUp"
+            data-wow-delay="0.3s"
+            data-slide-show="5"
+            data-lg-slide-show="4"
+            data-md-slide-show="3"
+            data-sm-slide-show="2"
+            data-xs-slide-show="2"
+            data-center-mode="true"
+            id="teamnav"
+            data-asnavfor="#palyergroup1"
+            data-arrows="true"
+          >
+            <div class="col-xl-3" th:each="team : ${teams}">
+              <div
+                class="tab-btn d-flex flex-column align-items-center justify-content-between text-center"
+                style="
+                  height: 220px;
+                  padding: 20px;
+                  border: 1px solid #2a2a2a;
+                  border-radius: 10px;
+                "
+              >
+                <span
+                  class="team-name"
+                  th:text="${team.name}"
+                  style="font-weight: 600; margin-bottom: 10px"
+                  >Team Name</span
+                >
+                <img
+                  th:src="@{${team.imageUrl}}"
+                  alt="team logo"
+                  class="team-logo"
+                  style="max-height: 200px; object-fit: contain"
+                />
+                <span class="btn-border"></span>
+                <span class="btn-border"></span>
+              </div>
+            </div>
+          </div>
 
-      <div class="row team-nav1 vs-carousel wow fadeInUp"
-           data-wow-delay="0.3s"
-           data-slide-show="5"
-           data-lg-slide-show="4"
-           data-md-slide-show="3"
-           data-sm-slide-show="2"
-           data-xs-slide-show="2"
-           data-center-mode="true"
-           id="teamnav"
-           data-asnavfor="#palyergroup1"
-           data-arrows="true">
-
-        <div class="col-xl-3" th:each="team : ${teams}">
-          <div class="tab-btn d-flex flex-column align-items-center justify-content-between text-center"
-               style="height: 220px; padding: 20px; border: 1px solid #2a2a2a; border-radius: 10px;">
-      <span class="team-name" th:text="${team.name}"
-            style="font-weight: 600; margin-bottom: 10px;">Team Name</span>
-            <img th:src="@{${team.imageUrl}}" alt="team logo"
-                 class="team-logo"
-                 style="max-height: 200px; object-fit: contain;" />
-            <span class="btn-border"></span>
-            <span class="btn-border"></span>
+          <div
+            class="vs-carousel wow fadeInUp"
+            data-wow-delay="0.4s"
+            data-slide-show="1"
+            data-fade="true"
+            id="palyergroup1"
+            data-asnavfor="#teamnav"
+            data-arrows="true"
+          >
+            <div th:each="i : ${#numbers.sequence(12, players.size() - 1, 4)}">
+              <div class="row gx-30">
+                <div
+                  class="col-md-6 player-style1"
+                  th:each="j : ${#numbers.sequence(i, i + 3)}"
+                  th:if="${j < players.size()}"
+                >
+                  <div class="player-body">
+                    <div class="player-bg"></div>
+                    <div class="player-img">
+                      <div class="player-shape1"></div>
+                      <img
+                        th:src="@{${players[j].imageUrl}}"
+                        alt="player"
+                        style="object-fit: cover; max-height: 250px"
+                      />
+                    </div>
+                    <div class="player-content text-center">
+                      <h3 class="player-name">
+                        <a
+                          class="text-inherit"
+                          href="#"
+                          th:text="${players[j].username}"
+                          >Player Name</a
+                        >
+                      </h3>
+                      <div class="player-social mt-2">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+      </section>
+    </div>
 
-      </div>
+    <br />
 
-
-
-      <div class="vs-carousel wow fadeInUp"
-           data-wow-delay="0.4s"
-           data-slide-show="1"
-           data-fade="true"
-           id="palyergroup1"
-           data-asnavfor="#teamnav"
-           data-arrows="true">
-
-        <div th:each="i : ${#numbers.sequence(12, players.size() - 1, 4)}">
-          <div class="row gx-30">
-            <div class="col-md-6 player-style1" th:each="j : ${#numbers.sequence(i, i + 3)}"
-                 th:if="${j < players.size()}">
-              <div class="player-body">
-                <div class="player-bg"></div>
-                <div class="player-img">
-                  <div class="player-shape1"></div>
-                  <img th:src="@{${players[j].imageUrl}}" alt="player"
-                       style="object-fit: cover; max-height: 250px;" />
-                </div>
-                <div class="player-content text-center">
-                  <h3 class="player-name">
-                    <a class="text-inherit" href="#" th:text="${players[j].username}">Player Name</a>
-                  </h3>
-                  <div class="player-social mt-2">
+    <footer
+      class="footer-wrapper footer-layout1"
+      data-bg-src="assets/img/bg/footer-bg-1-1.jpg"
+    >
+      <div class="widget-area">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-6">
+              <div class="widget footer-widget">
+                <div class="vs-widget-about">
+                  <div class="footer-logo">
+                    <a href="index.html">
+                      <img src="assets/img/1.0.png" alt="logo" width="200"
+                    /></a>
+                  </div>
+                  <p class="footer-text">
+                    E-Sport Arena — Simplifiez l'organisation de vos tournois
+                    e-sport. Inscriptions rapides, matchs en direct, classements
+                    mis à jour en temps réel. Rejoignez la communauté dès
+                    aujourd'hui !
+                  </p>
+                  <div class="footer-social">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
@@ -347,82 +422,38 @@
               </div>
             </div>
           </div>
-        </div>
 
-      </div>
-
-
-
-    </div>
-  </section>
-
-</div>
-
-<br />
-
-<footer
-        class="footer-wrapper footer-layout1"
-        data-bg-src="assets/img/bg/footer-bg-1-1.jpg"
->
-  <div class="widget-area">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-md-10 col-lg-8 col-xl-6">
-          <div class="widget footer-widget">
-            <div class="vs-widget-about">
-              <div class="footer-logo">
-                <a href="index.html">
-                  <img src="assets/img/1.0.png" alt="logo" width="200"
-                  /></a>
-              </div>
-              <p class="footer-text">
-                E-Sport Arena — Simplifiez l'organisation de vos tournois
-                e-sport. Inscriptions rapides, matchs en direct, classements
-                mis à jour en temps réel. Rejoignez la communauté dès
-                aujourd'hui !
-              </p>
-              <div class="footer-social">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-              </div>
-            </div>
+          <div class="copyright-menu">
+            <ul class="list-unstyled">
+              <li><a href="#">PRIVACY STATEMENT</a></li>
+              <li><a href="#">TERMS & CONDITIONS</a></li>
+              <li>
+                <a href="#">COOKIE POLICY</a>
+              </li>
+              <li><a href="#">SITEMAP</a></li>
+            </ul>
           </div>
         </div>
       </div>
-
-      <div class="copyright-menu">
-        <ul class="list-unstyled">
-          <li><a href="#">PRIVACY STATEMENT</a></li>
-          <li><a href="#">TERMS & CONDITIONS</a></li>
-          <li>
-            <a href="#">COOKIE POLICY</a>
-          </li>
-          <li><a href="#">SITEMAP</a></li>
-        </ul>
+      <div class="copyright-wrap">
+        <div class="container">
+          <p class="copyright-text">
+            Copyright <i class="fal fa-copyright"></i> 2025
+            <a href="index.html">eTournement Manager</a> . All Rights Reserved
+            By
+            <a href="#">Myms</a>
+          </p>
+        </div>
       </div>
-    </div>
-  </div>
-  <div class="copyright-wrap">
-    <div class="container">
-      <p class="copyright-text">
-        Copyright <i class="fal fa-copyright"></i> 2025
-        <a href="index.html">eTournement Manager</a> . All Rights Reserved
-        By
-        <a href="#">Myms</a>
-      </p>
-    </div>
-  </div>
-</footer>
-<a href="#" class="scrollToTop scroll-btn"
-><i class="far fa-arrow-up"></i
-></a>
-<script th:src="@{/assets/js/vendor/jquery-3.6.0.min.js}"></script>
-<script th:src="@{/assets/js/app.min.js}"></script>
-<script th:src="@{/assets/js/layerslider.utils.js}"></script>
-<script th:src="@{/assets/js/layerslider.transitions.js}"></script>
-<script th:src="@{/assets/js/layerslider.kreaturamedia.jquery.js}"></script>
-<script th:src="@{/assets/js/main.js}"></script>
-
-</body>
+    </footer>
+    <a href="#" class="scrollToTop scroll-btn"
+      ><i class="far fa-arrow-up"></i
+    ></a>
+    <script th:src="@{/assets/js/vendor/jquery-3.6.0.min.js}"></script>
+    <script th:src="@{/assets/js/app.min.js}"></script>
+    <script th:src="@{/assets/js/layerslider.utils.js}"></script>
+    <script th:src="@{/assets/js/layerslider.transitions.js}"></script>
+    <script th:src="@{/assets/js/layerslider.kreaturamedia.jquery.js}"></script>
+    <script th:src="@{/assets/js/main.js}"></script>
+  </body>
 </html>
