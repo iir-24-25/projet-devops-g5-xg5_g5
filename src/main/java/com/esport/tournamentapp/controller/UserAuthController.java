@@ -53,7 +53,8 @@ public class UserAuthController {
     @GetMapping("/index")
     public String userHome(Model model) {
         model.addAttribute("teams", teamRepository.findAll());
-        model.addAttribute("players", playerRepository.findAll()); // ADD THIS
+        model.addAttribute("players", playerRepository.findAll());
+        model.addAttribute("games", playerRepository.findAll());
         return "user/user-home";
     }
 }

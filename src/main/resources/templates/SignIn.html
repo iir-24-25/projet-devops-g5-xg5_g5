@@ -1,83 +1,82 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Se connecter</title>
     <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background: linear-gradient(to right, #040a83 30%, #0e0e0e);
-            font-family: 'Work Sans', sans-serif;
-        }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: linear-gradient(to right, #040a83 30%, #0e0e0e);
+        font-family: "Work Sans", sans-serif;
+      }
 
-        form {
-            border: 3px solid #4e5ec6;
-            color: #fff;
-            padding: 6em 2em;
-            width: 100%;
-            max-width: 575px;
-        }
+      form {
+        border: 3px solid #4e5ec6;
+        color: #fff;
+        padding: 6em 2em;
+        width: 100%;
+        max-width: 575px;
+      }
 
-        .input-field {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: 1em 0;
-        }
+      .input-field {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 1em 0;
+      }
 
-        .input-field input {
-            padding: 0.6em 0.5em;
-            min-width: 250px;
-        }
+      .input-field input {
+        padding: 0.6em 0.5em;
+        min-width: 250px;
+      }
 
-        button {
-            margin-top: 2em;
-            background-color: #0e0e0e;
-            border: none;
-            padding: 1em;
-            color: #fff;
-            cursor: pointer;
-            transition: 300ms background-color ease;
-            width: 100%;
-        }
+      button {
+        margin-top: 2em;
+        background-color: #0e0e0e;
+        border: none;
+        padding: 1em;
+        color: #fff;
+        cursor: pointer;
+        transition: 300ms background-color ease;
+        width: 100%;
+      }
 
-        button:hover {
-            background-color: black;
-        }
+      button:hover {
+        background-color: black;
+      }
 
-        .retour {
-            display: block;
-            margin-top: 1em;
-            color: #a32929;
-            text-align: center;
-            text-decoration: none;
-        }
+      .retour {
+        display: block;
+        margin-top: 1em;
+        color: #a32929;
+        text-align: center;
+        text-decoration: none;
+      }
     </style>
-</head>
-<body>
-<div class="logo">
-    <img th:src="@{/assets/img/3.0.png}" alt="logo" />
-</div>
+  </head>
+  <body>
+    <div class="logo">
+      <img th:src="@{/assets/img/3.0.png}" alt="logo" />
+    </div>
 
-<form th:action="@{/signin}" method="post">
-    <div class="input-field">
+    <form th:action="@{/signin}" method="post">
+      <div class="input-field">
         <label for="email">Email :</label>
         <input type="email" id="email" name="email" required />
-    </div>
-    <div class="input-field">
+      </div>
+      <div class="input-field">
         <label for="password">Mot de passe :</label>
         <input type="password" id="password" name="password" required />
-    </div>
-    <button type="submit">Se connecter</button>
-</form>
-<p th:if="${error}" th:text="${error}" style="color:red;"></p>
+      </div>
+      <button type="submit">Se connecter</button>
+    </form>
+    <p th:if="${error}" th:text="${error}" style="color: red"></p>
 
-
-<a th:href="@{/signup}" class="retour">Créer un compte</a>
-</body>
+    <a th:href="@{/signup}" class="retour">Créer un compte</a>
+  </body>
 </html>
