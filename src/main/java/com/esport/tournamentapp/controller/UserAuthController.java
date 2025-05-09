@@ -55,6 +55,7 @@ public class UserAuthController {
 
     @GetMapping("/index")
     public String userHome() {
-            return "user/user-home";
+        return "user/user-home"; // exact match to /templates/user/user-home.html
     }
+
 }

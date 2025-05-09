@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:fragment="head">
+  <meta charset="UTF-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title th:replace="~{::title}">E-Tournament</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="shortcut icon" th:href="@{/assets/img/1.0.png}" type="image/x-icon" />
+  <link rel="stylesheet" th:href="@{/assets/css/app.min.css}" />
+  <link rel="stylesheet" th:href="@{/assets/css/fontawesome.min.css}" />
+  <link rel="stylesheet" th:href="@{/assets/css/style.css}" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;700&display=swap" rel="stylesheet" />
+</head>
+
+<body class="dark-mode">
+
+<!-- 🔹 Navbar -->
+<header th:fragment="navbar">
+  <header class="vs-header header-layout2">
+    <div class="header-top">
+      <div class="container">
+        <div class="row align-items-center text-center text-lg-start">
+          <div class="col d-none d-lg-block">
+            <p class="header-top-text">Bienvenue dans e-sport gaming</p>
+          </div>
+          <div class="col-lg-auto">
+            <div class="header-links style2">
+              <ul>
+                <li><i class="fas fa-phone-alt"></i> Phone: <a href="tel:+2126563711">06 7388 5619</a></li>
+                <li><i class="fas fa-envelope"></i> Email: <a href="mailto:contact@example.com">contact@example.com</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sticky-wrapper">
+      <div class="sticky-active">
+        <div class="menu-area">
+          <div class="header-shape1"></div>
+          <div class="container">
+            <div class="row align-items-center justify-content-between">
+              <div class="col-auto">
+                <div class="header-logo">
+                  <a th:href="@{/index}">
+                    <img th:src="@{/assets/img/1.0.png}" alt="logo" width="150" />
+                  </a>
+                </div>
+              </div>
+              <div class="col text-end text-xl-center">
+                <nav class="main-menu menu-style1 d-none d-lg-block">
+                  <ul>
+                    <li><a th:href="@{/index}">Accueil</a></li>
+                    <li><a th:href="@{/tournaments}">Tournois</a></li>
+                    <li><a th:href="@{/teams}">Équipes</a></li>
+                    <li><a th:href="@{/ranking}">Classements</a></li>
+                    <li><a th:href="@{/matches}">Matchs</a></li>
+                    <li><a th:href="@{/contact}">Contact</a></li>
+                  </ul>
+                </nav>
+                <button class="vs-menu-toggle d-inline-block d-lg-none">
+                  <i class="fal fa-bars"></i>
+                </button>
+              </div>
+              <div class="col-auto d-none d-xxl-block">
+                <a th:href="@{/signin}" class="vs-btn">Login</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+</header>
+
+<!-- 🔹 Page Content Slot -->
+<main th:fragment="content">
+  <div class="container py-5">
+    <h2 class="text-center text-white">Contenu par défaut</h2>
+  </div>
+</main>
+
+<!-- 🔹 Footer -->
+<footer th:fragment="footer" class="footer-wrapper footer-layout1" th:attr="data-bg-src=@{/assets/img/bg/footer-bg-1-1.jpg}">
+  <div class="widget-area">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-6">
+          <div class="widget footer-widget">
+            <div class="vs-widget-about text-center">
+              <div class="footer-logo mb-3">
+                <a th:href="@{/index}">
+                  <img th:src="@{/assets/img/1.0.png}" alt="logo" width="200" />
+                </a>
+              </div>
+              <p class="footer-text">
+                E-Sport Arena — Simplifiez l'organisation de vos tournois e-sport.
+                Inscriptions rapides, matchs en direct, classements mis à jour en temps réel. Rejoignez la communauté dès aujourd'hui !
+              </p>
+              <div class="footer-social mt-3">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="copyright-menu text-center mt-4">
+        <ul class="list-inline">
+          <li class="list-inline-item"><a href="#">PRIVACY STATEMENT</a></li>
+          <li class="list-inline-item"><a href="#">TERMS & CONDITIONS</a></li>
+          <li class="list-inline-item"><a href="#">COOKIE POLICY</a></li>
+          <li class="list-inline-item"><a href="#">SITEMAP</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="copyright-wrap">
+    <div class="container">
+      <p class="text-center">
+        Copyright &copy; 2025 <a th:href="@{/index}">eTournement Manager</a> . Tous droits réservés par <a href="#">Myms</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- 🔹 Scripts -->
+<div th:fragment="scripts">
+  <script th:src="@{/assets/js/vendor/jquery-3.6.0.min.js}"></script>
+  <script th:src="@{/assets/js/app.min.js}"></script>
+  <script th:src="@{/assets/js/layerslider.utils.js}"></script>
+  <script th:src="@{/assets/js/layerslider.transitions.js}"></script>
+  <script th:src="@{/assets/js/layerslider.kreaturamedia.jquery.js}"></script>
+  <script th:src="@{/assets/js/main.js}"></script>
+</div>
+
+</body>
+</html>
