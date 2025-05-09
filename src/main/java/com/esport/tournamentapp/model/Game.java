@@ -12,7 +12,7 @@ public class Game {
 
     private String name;
 
-    private String platform; // e.g., PC, PlayStation, Xbox
+    private String platform;
 
     private String imageUrl;
 

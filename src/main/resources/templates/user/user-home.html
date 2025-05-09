@@ -129,8 +129,8 @@
       <section class="space-top space-extra-bottom">
         <div class="container">
           <div
-            class="title-area text-center wow fadeInUp"
-            data-wow-delay="0.3s"
+                  class="title-area text-center wow fadeInUp"
+                  data-wow-delay="0.3s"
           >
             <span class="sec-subtitle">Joueurs Pro</span>
             <h2 class="sec-title">Rencontrez les membres de l'équipe</h2>
@@ -138,22 +138,22 @@
           </div>
 
           <div
-            class="row team-nav1 vs-carousel wow fadeInUp"
-            data-wow-delay="0.3s"
-            data-slide-show="5"
-            data-lg-slide-show="4"
-            data-md-slide-show="3"
-            data-sm-slide-show="2"
-            data-xs-slide-show="2"
-            data-center-mode="true"
-            id="teamnav"
-            data-asnavfor="#palyergroup1"
-            data-arrows="true"
+                  class="row team-nav1 vs-carousel wow fadeInUp"
+                  data-wow-delay="0.3s"
+                  data-slide-show="5"
+                  data-lg-slide-show="4"
+                  data-md-slide-show="3"
+                  data-sm-slide-show="2"
+                  data-xs-slide-show="2"
+                  data-center-mode="true"
+                  id="teamnav"
+                  data-asnavfor="#palyergroup1"
+                  data-arrows="true"
           >
             <div class="col-xl-3" th:each="team : ${teams}">
               <div
-                class="tab-btn d-flex flex-column align-items-center justify-content-between text-center"
-                style="
+                      class="tab-btn d-flex flex-column align-items-center justify-content-between text-center"
+                      style="
                   height: 220px;
                   padding: 20px;
                   border: 1px solid #2a2a2a;
@@ -161,16 +161,16 @@
                 "
               >
                 <span
-                  class="team-name"
-                  th:text="${team.name}"
-                  style="font-weight: 600; margin-bottom: 10px"
-                  >Team Name</span
+                        class="team-name"
+                        th:text="${team.name}"
+                        style="font-weight: 600; margin-bottom: 10px"
+                >Team Name</span
                 >
                 <img
-                  th:src="@{${team.imageUrl}}"
-                  alt="team logo"
-                  class="team-logo"
-                  style="max-height: 200px; object-fit: contain"
+                        th:src="@{${team.imageUrl}}"
+                        alt="team logo"
+                        class="team-logo"
+                        style="max-height: 200px; object-fit: contain"
                 />
                 <span class="btn-border"></span>
                 <span class="btn-border"></span>
@@ -179,38 +179,37 @@
           </div>
 
           <div
-            class="vs-carousel wow fadeInUp"
-            data-wow-delay="0.4s"
-            data-slide-show="1"
-            data-fade="true"
-            id="palyergroup1"
-            data-asnavfor="#teamnav"
-            data-arrows="true"
+                  class="vs-carousel wow fadeInUp"
+                  data-wow-delay="0.4s"
+                  data-slide-show="1"
+                  data-fade="true"
+                  id="palyergroup1"
+                  data-asnavfor="#teamnav"
+                  data-arrows="true"
           >
-            <div th:each="i : ${#numbers.sequence(5, players.size() - 1, 4)}">
+            <div th:each="i : ${#numbers.sequence(5, 24, 4)}">
               <div class="row gx-30">
-                <div
-                  class="col-md-6 player-style1"
-                  th:each="j : ${#numbers.sequence(i, i + 3)}"
-                  th:if="${j < players.size()}"
-                >
+                <div class="col-md-6 player-style1"
+                     th:each="j : ${#numbers.sequence(i, i + 3)}"
+                     th:if="${j < players.size() and j <= 24}">
+
                   <div class="player-body">
                     <div class="player-bg"></div>
                     <div class="player-img">
                       <div class="player-shape1"></div>
                       <img
-                        th:src="@{${players[j].imageUrl}}"
-                        alt="player"
-                        style="object-fit: cover; max-height: 250px"
+                              th:src="@{${players[j].imageUrl}}"
+                              alt="player"
+                              style="object-fit: cover; max-height: 250px"
                       />
                     </div>
                     <div class="player-content text-center">
                       <h3 class="player-name">
                         <a
-                          class="text-inherit"
-                          href="#"
-                          th:text="${players[j].username}"
-                          >Player Name</a
+                                class="text-inherit"
+                                href="#"
+                                th:text="${players[j].username}"
+                        >Player Name</a
                         >
                       </h3>
                       <div class="player-social mt-2">
