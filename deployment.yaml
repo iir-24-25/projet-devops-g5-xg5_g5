@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: esport-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: esport-app
+  template:
+    metadata:
+      labels:
+        app: esport-app
+    spec:
+      containers:
+        - name: esport-app
+          image: your-dockerhub-username/esport-app:latest
+          ports:
+            - containerPort: 8080
+          env:
+            - name: SPRING_DATASOURCE_URL
+              value: jdbc:mysql://mysql-service:3306/esportdb
+            - name: SPRING_DATASOURCE_USERNAME
+              value: root
+            - name: SPRING_DATASOURCE_PASSWORD
+              value: root
