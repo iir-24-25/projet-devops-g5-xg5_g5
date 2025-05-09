@@ -1,16 +1,13 @@
 package com.esport.tournamentapp.controller;
 
 import com.esport.tournamentapp.model.User;
+import com.esport.tournamentapp.repository.TeamRepository;
 import com.esport.tournamentapp.repository.UserRepository;
+import com.esport.tournamentapp.repository.PlayerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-
-
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class UserAuthController {
@@ -18,6 +15,11 @@ public class UserAuthController {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private TeamRepository teamRepository;
+
+    @Autowired
+    private PlayerRepository playerRepository; // ADD THIS
 
     @GetMapping("/signup")
     public String signUpForm(Model model) {
@@ -31,7 +33,6 @@ public class UserAuthController {
         return "redirect:/signin";
     }
 
-
     @GetMapping("/signin")
     public String signInForm() {
         return "SignIn";
@@ -41,7 +42,7 @@ public class UserAuthController {
     public String processSignin(@RequestParam String email,
                                 @RequestParam String password,
                                 Model model) {
-        User user = userRepository.findByEmail(email); // or findByEmail(email)
+        User user = userRepository.findByEmail(email);
         if (user != null && user.getPassword().equals(password)) {
             return "redirect:/index";
         }
@@ -49,13 +50,10 @@ public class UserAuthController {
         return "SignIn";
     }
 
-
-
-
-
     @GetMapping("/index")
-    public String userHome() {
-        return "user/user-home"; // exact match to /templates/user/user-home.html
+    public String userHome(Model model) {
+        model.addAttribute("teams", teamRepository.findAll());
+        model.addAttribute("players", playerRepository.findAll()); // ADD THIS
+        return "user/user-home";
     }
-
 }

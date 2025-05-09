@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+  <!-- Mirrored from html.vecurosoft.com/playrex/dark/tournament-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 19 Apr 2025 16:32:08 GMT -->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>
+      e-sport Arena - esports and gaming HTML Template - Tournois Details
+    </title>
+    <meta name="author" content="Vecuro" />
+    <meta
+      name="description"
+      content="Playrex - esports and gaming  HTML Template"
+    />
+    <meta
+      name="keywords"
+      content="Playrex - esports and gaming  HTML Template"
+    />
+    <meta name="robots" content="INDEX,FOLLOW" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,shrink-to-fit=no"
+    />
+    <link th:href="@{/assets/img/2.0.png}" rel="shortcut icon" type="image/x-icon" />
+    <link th:href="@{/assets/img/2.0.png}" rel="icon" type="image/x-icon" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com/" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link th:href="@{/assets/css/app.min.css}" rel="stylesheet" />
+    <link th:href="@{/assets/css/fontawesome.min.css}" rel="stylesheet" />
+    <link th:href="@{/assets/css/style.css}" rel="stylesheet" />
+  </head>
+  <body class="dark-mode">
+    <div class="preloader">
+      <button class="vs-btn preloaderCls">Cancel Preloader</button>
+      <div class="preloader-inner">
+        <div class="loader-logo">
+          <img src="@{/assets/img/2.0.png}" alt="logo" />
+        </div>
+        <div class="spinner"></div>
+      </div>
+    </div>
+    <div class="vs-menu-wrapper">
+      <div class="vs-menu-area text-center">
+        <button class="vs-menu-toggle"><i class="fal fa-times"></i></button>
+        <div class="mobile-logo">
+          <a th:href="@{/}">
+            <img th:src="@{/assets/img/1.0.png}" alt="logo" />
+          </a>
+        </div>
+
+        <div class="vs-mobile-menu">
+          <ul>
+
+            <li><a th:href="@{/index}">Acceuil</a></li>
+            <li><a th:href="@{/tournament/details}">Tournois</a></li>
+            <li><a th:href="@{/user/teams}">Equipe</a></li>
+
+
+            <li><a href="about.html">About Us</a></li>
+            <li class="menu-item-has-children">
+              <a href="match.html">Matches</a>
+              <ul class="sub-menu">
+                <li><a href="match.html">Matches</a></li>
+                <li><a href="match-details.html">Match Details</a></li>
+              </ul>
+            </li>
+            <li class="menu-item-has-children">
+              <a href="team.html">Team</a>
+              <ul class="sub-menu">
+                <li><a href="team.html">Team</a></li>
+                <li><a href="team-details.html">Team Details</a></li>
+              </ul>
+            </li>
+            <li class="menu-item-has-children">
+              <a href="#">Pages</a>
+              <ul class="sub-menu">
+                <li><a href="price-plan.html">Pricing Plans</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="blog-details.html">Blog Details</a></li>
+                <li><a href="player-details.html">Player Details</a></li>
+                <li>
+                  <a href="tournament-details.html">Tournament Details</a>
+                </li>
+                <li><a href="faq.html">FAQ Page</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="shop-details.html">Shop Details</a></li>
+                <li><a href="cart.html">Shopping Cart</a></li>
+                <li><a href="checkout.html">Checkout</a></li>
+                <li><a href="error.html">Error Page</a></li>
+              </ul>
+            </li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="sidemenu-wrapper d-none d-lg-block">
+      <div class="sidemenu-content">
+        <button class="closeButton sideMenuCls">
+          <i class="far fa-times"></i>
+        </button>
+        <div class="widget">
+          <div class="vs-widget-about">
+            <div class="footer-logo">
+              <a href="index.html"
+                ><img src="@{/assets/img/logo-2.svg}" alt="logo"
+              /></a>
+            </div>
+            <p class="footer-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor in cididunt ut labore et dolo aliqua.
+            </p>
+            <div class="footer-social">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="widget">
+          <h3 class="widget_title">Get In Touch</h3>
+          <div>
+            <div class="footer-media">
+              <div class="media-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="media-body">
+                <p class="media-info">
+                  60313, Opernplatz 8, Frankfurt<br />Am Main, Hesse
+                </p>
+              </div>
+            </div>
+            <div class="footer-media">
+              <div class="media-icon"><i class="fas fa-phone-alt"></i></div>
+              <div class="media-body">
+                <span class="media-title">Phone No:</span>
+                <p class="media-info">
+                  <a href="tel:+18004563711" class="text-inherit"
+                    >+1 (800) 456 37 11</a
+                  >
+                </p>
+              </div>
+            </div>
+            <div class="footer-media">
+              <div class="media-icon"><i class="far fa-envelope"></i></div>
+              <div class="media-body">
+                <span class="media-title">Email Address:</span>
+                <p class="media-info">
+                  <a href="tel:+18004563711" class="text-inherit"
+                    >support@promo-theme.com</a
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="widget">
+          <div class="sidebar-gallery">
+            <div class="gallery-thumb">
+              <img
+                src="assets/img/widget/gal-1-1.jpg"
+                alt="Gallery Image"
+                class="w-100"
+              />
+              <a
+                href="assets/img/widget/gal-1-1.jpg"
+                class="popup-image gal-btn"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </div>
+            <div class="gallery-thumb">
+              <img
+                src="assets/img/widget/gal-1-2.jpg"
+                alt="Gallery Image"
+                class="w-100"
+              />
+              <a
+                href="assets/img/widget/gal-1-2.jpg"
+                class="popup-image gal-btn"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </div>
+            <div class="gallery-thumb">
+              <img
+                src="assets/img/widget/gal-1-3.jpg"
+                alt="Gallery Image"
+                class="w-100"
+              />
+              <a
+                href="assets/img/widget/gal-1-3.jpg"
+                class="popup-image gal-btn"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </div>
+            <div class="gallery-thumb">
+              <img
+                src="assets/img/widget/gal-1-4.jpg"
+                alt="Gallery Image"
+                class="w-100"
+              />
+              <a
+                href="assets/img/widget/gal-1-4.jpg"
+                class="popup-image gal-btn"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </div>
+            <div class="gallery-thumb">
+              <img
+                src="assets/img/widget/gal-1-5.jpg"
+                alt="Gallery Image"
+                class="w-100"
+              />
+              <a
+                href="assets/img/widget/gal-1-5.jpg"
+                class="popup-image gal-btn"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </div>
+            <div class="gallery-thumb">
+              <img
+                src="assets/img/widget/gal-1-6.jpg"
+                alt="Gallery Image"
+                class="w-100"
+              />
+              <a
+                href="assets/img/widget/gal-1-6.jpg"
+                class="popup-image gal-btn"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <header class="vs-header header-layout1">
+      <div class="container">
+        <div class="row gx-0">
+          <div class="col-auto align-self-stretch d-none d-lg-block">
+            <div class="header-logo">
+              <a th:href="@{/}">
+                <img th:src="@{/assets/img/1.0.png}" alt="logo" width="150"/>
+              </a>
+            </div>
+
+          </div>
+          <div class="col align-self-center">
+
+            <div class="menu-area">
+              <div class="row gx-0">
+                <div class="col text-end text-xl-center text-xxl-start">
+                  <nav class="main-menu menu-style1 d-none d-lg-block">
+                    <ul>
+                      <li><a th:href="@{/index}">Acceuil</a></li>
+                      <li><a th:href="@{/tournament/details}">Tournois</a></li>
+                      <li><a th:href="@{/teams}">Equipe</a></li>
+                      <li><a href="about.html">Classements</a></li>
+                      <li class="menu-item-has-children">
+                        <a href="match.html">Matches</a>
+                        <ul class="sub-menu">
+                          <li><a href="match.html">Matches</a></li>
+                          <li>
+                            <a href="match-details.html">Match Details</a>l;
+                          </li>
+                        </ul>
+                      </li>
+                      <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                  </nav>
+                </div>
+                <div class="col-auto d-none d-xl-block">
+                  <div class="header-icons">
+                    <a href="cart.html" class="cart-icon"
+                      ><i class="far fa-shopping-bag"></i
+                    ></a>
+                    <button class="sideMenuToggler">
+                      <i class="fal fa-bars"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="col-auto d-none d-xxl-block">
+                  <a href="match-details.html" class="header-strem-btn"
+                    >Live Streaming</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="row justify-content-between align-items-center d-flex d-lg-none"
+        >
+          <div class="col-auto">
+            <div class="header-logo">
+              <a href="index.html"
+                ><img src="@{/assets/img/logo-2.svg}" alt="logo"
+              /></a>
+            </div>
+          </div>
+          <div class="col-auto">
+            <button class="vs-menu-toggle"><i class="fal fa-bars"></i></button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="breadcumb-wrapper" th:attr="data-bg-src=@{/assets/img/breadcumb/breadcumb-bg.jpg}">
+      <div class="container z-index-common">
+        <div class="breadcumb-content">
+          <h1 class="breadcumb-title">Tournament Details</h1>
+          <p class="breadcumb-subtitle">Cover all esports & gamers needs</p>
+        </div>
+        <div class="breadcumb-menu-wrap">
+          <ul class="breadcumb-menu">
+            <li>
+              <a th:href="@{/}"><i class="fas fa-home-lg"></i>Home</a>
+            </li>
+            <li>Tournament Details</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+    <section class="space-extra">
+      <div class="container">
+        <h3 class="sec-subtitle3">TOURNAMENT MATCHES</h3>
+        <div class="row">
+          <div class="col-12">
+            <div class="match-style1" th:each="match : ${matches}">
+              <div class="match-top d-flex justify-content-between align-items-center"
+                   style="display: flex; justify-content: space-between; align-items: center;">
+                <!-- Team A -->
+                <div class="match-team text-center">
+                  <div class="team-logo">
+                    <img th:src="@{${match.teamA.imageUrl}}" alt="Team A" style="max-width: 70px;" />
+                  </div>
+                  <h3 class="h6 team-name mt-2" th:text="${match.teamA.name}"></h3>
+                </div>
+
+                <!-- Score / Match Time -->
+                <div class="match-score text-center"
+                     style="font-size: 1.8rem; font-weight: bold; min-width: 90px;">
+              <span th:text="${match.result != null ? match.result.teamAScore + ' : ' + match.result.teamBScore : #dates.format(match.matchDate, 'HH:mm')}">
+                0 : 0
+              </span>
+                </div>
+
+                <!-- Team B -->
+                <div class="match-team text-center">
+                  <div class="team-logo">
+                    <img th:src="@{${match.teamB.imageUrl}}" alt="Team B" style="max-width: 70px;" />
+                  </div>
+                  <h3 class="h6 team-name mt-2" th:text="${match.teamB.name}"></h3>
+                </div>
+              </div>
+
+              <div class="match-bottom text-center mt-2">
+                <p class="match-date" th:text="${#dates.format(match.matchDate, 'MMMM dd, yyyy HH:mm')}"></p>
+                <a href="#" class="match-btn"><i class="fab fa-twitch"></i>Watch Stream</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="space-extra-bottom">
+      <div class="container">
+        <h3 class="sec-subtitle3">TOURNAMENT TEAMS</h3>
+        <div class="row vs-carousel wow fadeInUp"
+             data-wow-delay="0.3s"
+             data-slide-show="3"
+             data-md-slide-show="2"
+             data-center-mode="true"
+             data-xl-center-mode="true"
+             data-dots="true">
+
+          <div class="col-xl-4 team-style1 layout3" th:each="team : ${teams}">
+            <div class="team-body d-flex flex-column align-items-center justify-content-between text-center"
+                 style="height: 300px; padding: 20px; border: 2px solid #ff0055; border-radius: 10px; background-color: #24006e;">
+
+              <!-- Logo with fixed height container -->
+              <div style="height: 100px; display: flex; align-items: center; justify-content: center;">
+                <a th:href="@{'/team-details/' + ${team.id}}">
+                  <img th:src="@{${team.imageUrl}}" alt="team logo"
+                       style="max-height: 80px; object-fit: contain;" />
+                </a>
+              </div>
+
+              <!-- Team name -->
+              <h3 class="team-name h4 mt-3">
+                <a th:href="@{'/team-details/' + ${team.id}}" class="text-inherit" th:text="${team.name}">Team Name</a>
+              </h3>
+
+              <!-- Button -->
+              <div>
+                <a th:href="@{'/team-details/' + ${team.id}}" class="vs-btn mt-3">More Information</a>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+    <footer
+      class="footer-wrapper footer-layout1"
+      data-bg-src="assets/img/bg/footer-bg-1-1.jpg"
+    >
+      <div class="widget-area">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-6">
+              <div class="widget footer-widget">
+                <div class="vs-widget-about">
+                  <div class="footer-logo">
+                    <a th:href="@{/}">
+                      <img th:src="@{/assets/img/1.0.png}" alt="logo" width="200" />
+                    </a>
+
+                  </div>
+                  <p class="footer-text">
+                    E-Sport Arena — Simplifiez l'organisation de vos tournois
+                    e-sport. Inscriptions rapides, matchs en direct, classements
+                    mis à jour en temps réel. Rejoignez la communauté dès
+                    aujourd'hui !
+                  </p>
+                  <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="copyright-menu">
+            <ul class="list-unstyled">
+              <li><a href="#">PRIVACY STATEMENT</a></li>
+              <li><a href="#">TERMS & CONDITIONS</a></li>
+              <li>
+                <a href="#">COOKIE POLICY</a>
+              </li>
+              <li><a href="#">SITEMAP</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="copyright-wrap">
+        <div class="container">
+          <p class="copyright-text">
+            Copyright <i class="fal fa-copyright"></i> 202
+            <a href="index.html">E-sport Arena</a> . All Rights Reserved By
+            <a href="https://themeforest.net/user/vecuro_themes">Vecuro</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+    <a href="#" class="scrollToTop scroll-btn"
+      ><i class="far fa-arrow-up"></i
+    ></a>
+    <script th:src="@{/assets/js/vendor/jquery-3.6.0.min.js}"></script>
+    <script th:src="@{/assets/js/app.min.js}"></script>
+    <script th:src="@{/assets/js/main.js}"></script>
+  </body>
+  <!-- Mirrored from html.vecurosoft.com/playrex/dark/tournament-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 19 Apr 2025 16:32:09 GMT -->
+</html>

@@ -12,5 +12,7 @@ public interface MatchRepository extends JpaRepository<Match, Long> {
 
     @Query("SELECT DISTINCT m.tournament FROM Match m")
     List<Tournament> findDistinctTournaments();
+    List<Match> findAllByOrderByMatchDateAsc();
+
 
 }
