@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3307
--- Generation Time: May 08, 2025 at 08:58 PM
+-- Generation Time: May 09, 2025 at 06:47 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -199,14 +199,14 @@ CREATE TABLE `teams` (
 --
 
 INSERT INTO `teams` (`id`, `captain`, `name`, `country`, `image_url`) VALUES
-(2, 'Blood', 'Nexus', 'Morocco', '/images/nexuus.jpg'),
+(2, 'Blood', 'Nexus', 'Morocco', '/images/Nexus.png'),
 (3, 'S1mple', 'Navi', 'Ukraine', '/images/Navi.png'),
 (4, 'Shroud', 'Cloud9', 'USA', '/images/cloud9.png'),
-(5, 'Karrigan', 'Faze Clan', 'USA', '/images/faze.png'),
-(6, 'Caps', 'G2esports', 'Germany', '/images/G2esports.png'),
-(7, 'TenZ', 'Sentinels', 'USA', '/images/Sentinels.png'),
-(8, 'NAF', 'TeamLiquid', 'Netherlands', '/images/TeamLiquid.png'),
-(9, 'Rekkles', 'Fnatic', 'UK', '/images/Fnatic.png');
+(5, 'Karrigan', 'Faze Clan', 'USA', '/images/Faaze.png'),
+(6, 'Caps', 'G2esports', 'Germany', '/images/g2espoorts.png'),
+(7, 'TenZ', 'Sentinels', 'USA', '/images/Sentinelss.png'),
+(8, 'NAF', 'TeamLiquid', 'Netherlands', '/images/Team_Liquid_logo.svg.png'),
+(9, 'Rekkles', 'Fnatic', 'UK', '/images/Esports_Fnatic_.png');
 
 -- --------------------------------------------------------
 
@@ -229,16 +229,16 @@ INSERT INTO `team_players` (`team_id`, `player_id`) VALUES
 (3, 8),
 (3, 9),
 (3, 10),
-(2, 1),
-(2, 2),
-(2, 3),
-(2, 4),
-(2, 5),
 (4, 14),
 (4, 11),
 (4, 12),
 (4, 13),
 (4, 15),
+(2, 1),
+(2, 2),
+(2, 3),
+(2, 4),
+(2, 5),
 (5, 20),
 (5, 19),
 (5, 18),
@@ -310,7 +310,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `password`, `role`, `username`, `full_name`, `email`) VALUES
 (1, 'oussama123', NULL, 'Sekiro', 'OUSSAMA BENHIDA', 'Oussama.Benhida@emsi-edu.ma'),
-(3, 'oussama123', NULL, 'DarkSIde', 'Yassir Benjima', 'Yassir.Benjima@emsi-edu.ma');
+(3, 'oussama123', NULL, 'DarkSIde', 'Yassir Benjima', 'Yassir.Benjima@emsi-edu.ma'),
+(4, 'oussama123', NULL, 'Belg', 'Ali Belg', 'Ali.Beng@emsi-edu.com');
 
 --
 -- Indexes for dumped tables
@@ -429,7 +430,7 @@ ALTER TABLE `tournaments`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables
