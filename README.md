@@ -7,7 +7,7 @@ Cette application web permet de gérer des tournois e-sport en ligne via une int
 
 ---
 
-## ✨ Fonctionnalités
+## ✨ Fonctionnalités Admin
 
 - Connexion/Déconnexion de l’administrateur
 - Inscription et gestion des utilisateurs
@@ -27,6 +27,34 @@ Cette application web permet de gérer des tournois e-sport en ligne via une int
 - Page 404 personnalisée
 
 ---
+
+🧑‍💻 Fonctionnalités côté utilisateur
+Page d’accueil dynamique pour les utilisateurs (/index)
+
+Affichage des équipes dans un carrousel avec logo et nom
+
+Affichage dynamique des joueurs  avec photo, nom et réseaux sociaux
+
+Page des équipes (/team)
+
+Liste de toutes les équipes enregistrées
+
+Cartes de taille uniforme avec image, nom et bouton d'information
+
+Page des matchs (/match)
+
+Affichage de tous les matchs triés par date croissante
+
+Affichage dynamique avec logos des équipes, noms, score ou heure et lien vers le stream
+
+Page détails tournoi (/tournament/details)
+
+Affiche tous les matchs d’un tournoi spécifique triés par date
+
+Affiche toutes les équipes du tournoi sous forme de cartes responsives
+
+---
+
 
 ## 🛠️ Technologies utilisées
 
@@ -77,7 +105,7 @@ cd projet-devops-g5-xg5_g5
 
 ### 2. Créer la base de données
 
-Créer une base MySQL nommée `esport_db` et importer le dump SQL .
+Créer une base MySQL nommée `esport_db` et importer le dump SQL situé dans le dossier DataBase.
 
 Sinon, la base sera générée automatiquement par JPA. Ajoute manuellement l’admin par défaut :
 
