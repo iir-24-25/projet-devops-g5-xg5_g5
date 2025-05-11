@@ -55,43 +55,14 @@
         </div>
 
         <div class="vs-mobile-menu">
-          <ul>
-            <li><a th:href="@{/index}">Acceuil</a></li>
-
-            <li><a th:href="@{/tournament/details}">Tournois</a></li>
-
-            <li><a th:href="@{/user/teams}">Equipe</a></li>
-
-            <li><a href="about.html">About Us</a></li>
-            <li class="menu-item-has-children">
-              <a href="match.html">Matches</a>
-              <ul class="sub-menu">
-                <li><a href="match.html">Matches</a></li>
-                <li><a href="match-details.html">Match Details</a></li>
-              </ul>
-            </li>
-
-            <li class="menu-item-has-children">
-              <a href="#">Pages</a>
-              <ul class="sub-menu">
-                <li><a href="price-plan.html">Pricing Plans</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="blog-details.html">Blog Details</a></li>
-                <li><a href="player-details.html">Player Details</a></li>
-                <li>
-                  <a href="tournament-details.html">Tournament Details</a>
-                </li>
-                <li><a href="faq.html">FAQ Page</a></li>
-                <li><a href="shop.html">Shop</a></li>
-                <li><a href="shop-details.html">Shop Details</a></li>
-                <li><a href="cart.html">Shopping Cart</a></li>
-                <li><a href="checkout.html">Checkout</a></li>
-                <li><a href="error.html">Error Page</a></li>
-              </ul>
-            </li>
-            <li><a href="contact.html">Contact Us</a></li>
-          </ul>
-        </div>
+          <nav class="main-menu menu-style1 d-none d-lg-block">
+            <ul>
+              <li><a th:href="@{/index}">Acceuil</a></li>
+              <li><a th:href="@{/tournament/details}">Tournois</a></li>
+              <li><a th:href="@{/teams}">Equipe</a></li>
+              <li><a th:href="@{/tournament/details}">Matches</a></li>
+            </ul>
+          </nav>        </div>
       </div>
     </div>
     <div class="sidemenu-wrapper d-none d-lg-block">
@@ -245,26 +216,16 @@
           <div class="col align-self-center">
             <div class="menu-area">
               <div class="row gx-0">
-                <div class="col text-end text-xl-center text-xxl-start">
+                <div class="col text-end text-xl-center">
                   <nav class="main-menu menu-style1 d-none d-lg-block">
-                    <ul>
-                      <li><a th:href="@{/index}">Acceuil</a></li>
-                      <li><a th:href="@{/tournament/details}">Tournois</a></li>
-                      <li><a th:href="@{/teams}">Equipe</a></li>
-
-                      <li><a href="about.html">Classements</a></li>
-                      <li class="menu-item-has-children">
-                        <a href="match.html">Matches</a>
-                        <ul class="sub-menu">
-                          <li><a href="match.html">Matches</a></li>
-                          <li>
-                            <a href="match-details.html">Match Details</a>l;
-                          </li>
-                        </ul>
-                      </li>
-                      <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                  </nav>
+                    <nav class="main-menu menu-style1 d-none d-lg-block">
+                      <ul>
+                        <li><a th:href="@{/index}">Acceuil</a></li>
+                        <li><a th:href="@{/tournament/details}">Tournois</a></li>
+                        <li><a th:href="@{/teams}">Equipe</a></li>
+                        <li><a th:href="@{/match}">Matches</a></li>
+                      </ul>
+                    </nav>                  </nav>
                 </div>
                 <div class="col-auto d-none d-xl-block">
                   <div class="header-icons">
@@ -437,8 +398,8 @@
     </section>
 
     <footer
-      class="footer-wrapper footer-layout1"
-      data-bg-src="assets/img/bg/footer-bg-1-1.jpg"
+            class="footer-wrapper footer-layout1"
+            data-bg-src="assets/img/bg/footer-bg-1-1.jpg"
     >
       <div class="widget-area">
         <div class="container">
@@ -447,13 +408,9 @@
               <div class="widget footer-widget">
                 <div class="vs-widget-about">
                   <div class="footer-logo">
-                    <a th:href="@{/}">
-                      <img
-                        th:src="@{/assets/img/1.0.png}"
-                        alt="logo"
-                        width="200"
-                      />
-                    </a>
+                    <a href="index.html">
+                      <img src="assets/img/1.0.png" alt="logo" width="200"
+                      /></a>
                   </div>
                   <p class="footer-text">
                     E-Sport Arena — Simplifiez l'organisation de vos tournois
@@ -486,9 +443,10 @@
       <div class="copyright-wrap">
         <div class="container">
           <p class="copyright-text">
-            Copyright <i class="fal fa-copyright"></i> 202
-            <a href="index.html">E-sport Arena</a> . All Rights Reserved By
-            <a href="https://themeforest.net/user/vecuro_themes">Vecuro</a>
+            Copyright <i class="fal fa-copyright"></i> 2025
+            <a href="index.html">eTournement Manager</a> . All Rights Reserved
+            By
+            <a href="#">YOMS</a>
           </p>
         </div>
       </div>

@@ -57,12 +57,14 @@
           /></a>
         </div>
         <div class="vs-mobile-menu">
-          <ul>
-            <li><a th:href="@{/index}">Acceuil</a></li>
-            <li><a th:href="@{/tournament/details}">Tournois</a></li>
-            <li><a th:href="@{/teams}">Equipe</a></li>
-            <li><a href="#">Matches</a></li>
-          </ul>
+          <nav class="main-menu menu-style1 d-none d-lg-block">
+            <ul>
+              <li><a th:href="@{/index}">Acceuil</a></li>
+              <li><a th:href="@{/tournament/details}">Tournois</a></li>
+              <li><a th:href="@{/teams}">Equipe</a></li>
+              <li><a th:href="@{/tournament/details}">Matches</a></li>
+            </ul>
+          </nav>
         </div>
       </div>
     </div>
@@ -105,12 +107,14 @@
                 </div>
                 <div class="col text-end text-xl-center">
                   <nav class="main-menu menu-style1 d-none d-lg-block">
-                    <ul>
-                      <li><a th:href="@{/index}">Acceuil</a></li>
-                      <li><a th:href="@{/tournament/details}">Tournois</a></li>
-                      <li><a th:href="@{/teams}">Equipe</a></li>
-                      <li><a href="#">Matches</a></li>
-                    </ul>
+                    <nav class="main-menu menu-style1 d-none d-lg-block">
+                      <ul>
+                        <li><a th:href="@{/index}">Acceuil</a></li>
+                        <li><a th:href="@{/tournament/details}">Tournois</a></li>
+                        <li><a th:href="@{/teams}">Equipe</a></li>
+                        <li><a th:href="@{/match}">Matches</a></li>
+                      </ul>
+                    </nav>
                   </nav>
                   <button class="vs-menu-toggle d-inline-block d-lg-none">
                     <i class="fal fa-bars"></i>
