@@ -21,7 +21,7 @@ public class UserTeamDetailsController {
         List<Team> teams = teamRepository.findAll();
 
         model.addAttribute("teams", teams);
-        return "user/team"; // this maps to templates/user/team.html
+        return "user/team";
     }
 
 }

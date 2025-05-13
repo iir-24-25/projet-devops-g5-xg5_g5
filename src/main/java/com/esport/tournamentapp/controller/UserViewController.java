@@ -25,7 +25,7 @@ public class UserViewController {
             users = userRepository.findAll();
         }
         model.addAttribute("users", users);
-        model.addAttribute("email", email); // Preserve input value
+        model.addAttribute("email", email);
         return "admin/users";
     }
 

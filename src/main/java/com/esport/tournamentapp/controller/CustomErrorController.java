@@ -26,6 +26,6 @@ public class CustomErrorController implements ErrorController {
             return "error/404";
         }
 
-        return "error"; // fallback to a generic error page (optional)
+        return "error"; // fallback to a generic error page
     }
 }

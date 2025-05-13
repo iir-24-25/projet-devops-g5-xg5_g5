@@ -19,6 +19,6 @@ public class UserMatchController {
     public String showUserMatchesPage(Model model) {
         List<Match> matches = matchRepository.findAllByOrderByMatchDateAsc();
         model.addAttribute("matches", matches);
-        return "user/match"; // templates/user/match.html
+        return "user/match";
     }
 }

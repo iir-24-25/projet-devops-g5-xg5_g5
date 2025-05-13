@@ -22,7 +22,7 @@ public class UserTournamentController {
 
     @GetMapping("/tournament/details")
     public String showTournamentDetailsPage(Model model) {
-        List<Match> matches = matchRepository.findAllByOrderByMatchDateAsc(); // sorted by date
+        List<Match> matches = matchRepository.findAllByOrderByMatchDateAsc();
         List<Team> teams = teamRepository.findAll();
         model.addAttribute("matches", matches);
         model.addAttribute("teams", teams);

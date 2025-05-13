@@ -19,7 +19,7 @@ public class UserAuthController {
     private TeamRepository teamRepository;
 
     @Autowired
-    private PlayerRepository playerRepository; // ADD THIS
+    private PlayerRepository playerRepository;
 
     @GetMapping("/signup")
     public String signUpForm(Model model) {
