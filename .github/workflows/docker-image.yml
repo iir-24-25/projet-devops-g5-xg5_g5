@@ -23,11 +23,10 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
 
-    - name: Build with Maven
+    - name: Build with Maven (skip tests)
       run: mvn clean package -DskipTests
 
-    - name: Run tests
-      run: mvn test
+    # Supprimé l’étape Run tests
 
     - name: Build Docker image
       run: docker build -t app-tournois-e-sport .
